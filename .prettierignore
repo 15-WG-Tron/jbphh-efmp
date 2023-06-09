@@ -1,0 +1,9 @@
+build
+dist
+coverage
+.next
+cypress
+package-lock.json
+tailwind.config.js
+vitest.config.ts
+tsconfig.*
