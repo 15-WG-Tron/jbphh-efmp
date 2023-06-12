@@ -12,7 +12,6 @@ jobs:
   run_pipeline:
     runs-on: ubuntu-latest
     
-    
     steps:
       - name: Trigger CI Pipeline
         run: |
