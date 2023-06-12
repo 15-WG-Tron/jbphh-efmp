@@ -15,9 +15,9 @@ jobs:
     steps:
       - name: Trigger CI Pipeline
         run: |
-          curl \
+          curl \                                                                                                                                 zachhunn@Zachs-MBP
             -X POST \
             -H "Accept: application/vnd.github.v3+json" \
-            -H "Authorization: Bearer ${{ secrets.GITHUB_TOKEN }}" \
+            -H "Authorization: Bearer ${{secrets.GITHUB_TOKEN}}" \
             https://api.github.com/repos/15-WG-Tron/pipelines/actions/workflows/ci-pipeline.yml/dispatches \
             -d '{"ref":"main"}'
