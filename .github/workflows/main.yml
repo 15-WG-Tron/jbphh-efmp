@@ -20,7 +20,8 @@ jobs:
           node-version: '16'
       
       - run: npm install @octokit/action
-
+        
+      - run: sleep 30
       - name: Trigger CI Pipeline
         uses: actions/github-script@v2.1.0
         with:
