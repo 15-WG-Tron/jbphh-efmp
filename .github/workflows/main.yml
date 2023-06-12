@@ -16,5 +16,5 @@ jobs:
       - name: Trigger CI Pipeline
         uses: benc-uk/workflow-dispatch@v1.2.2
         with:
-          workflow: ci-pipeline.yml
+          workflow: ci.yml
           repo: 15-WG-Tron/pipelines
