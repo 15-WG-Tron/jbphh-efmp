@@ -15,7 +15,7 @@ jobs:
     steps:
       - name: Trigger CI Pipeline
         run: |
-          curl \
+          curl -L \
             -X POST \
             -H "Accept: application/vnd.github.v3+json" \
             -H "Authorization: Bearer ${{secrets.GITHUB_TOKEN}}" \
