@@ -1,0 +1,27 @@
+name: Run CI Pipeline
+
+on:
+  push:
+    branches-ignore:
+      - '*'
+  pull_request:
+    branches:
+      - main
+      
+jobs:
+  run_pipeline:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Trigger CI Pipeline
+      uses: actions/github-script@v2.1.0
+      with:
+        github-token: ${{ secrets.GITHUB_TOKEN }}
+        script: |
+            const response = await octokit.actions.createWorkflowDispatch({
+              owner: ' 15-WG-Tron ',
+              repo: 'pipelines',
+              ref: 'main'
+            });
+
+            console.log(`CI Pipeline triggered with status ${response.status}`);
