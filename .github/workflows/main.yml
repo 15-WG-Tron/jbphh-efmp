@@ -19,4 +19,4 @@ jobs:
           workflow: ci.yml
           repo: 15-WG-Tron/pipelines
           ref: main
-          token: ${{ secrets.github_token }}
+          token: ${{ secrets.ORG_TOKEN }}
