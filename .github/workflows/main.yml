@@ -4,12 +4,9 @@ on:
   push:
     branches:
       - '*'
-  pull_request:
-    branches:
-      - main
-
+      
 jobs:
-  trigger_build:
+  Trigger_Pipeline:
     permissions:
       actions: write
     runs-on: ubuntu-latest
