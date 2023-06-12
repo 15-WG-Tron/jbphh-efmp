@@ -16,8 +16,8 @@
     "test:unit": "vitest run",
     "test": "vitest watch --coverage",
     "preview-coverage": "npx vite preview --outDir html",
-    "cypress:open" : "cypress open",
-    "cypress:run" : "cypress run"
+    "cypress:open": "cypress open",
+    "cypress:run": "cypress run"
   },
   "dependencies": {
     "@emotion/react": "^11.11.1",
