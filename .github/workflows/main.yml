@@ -17,3 +17,5 @@ jobs:
         with:
           workflow: ci.yml
           repo: 15-WG-Tron/pipelines
+          ref: main
+          token: ${{secrets.GITHUB_TOKEN}}
