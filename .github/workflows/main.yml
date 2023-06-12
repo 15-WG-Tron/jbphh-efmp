@@ -9,7 +9,9 @@ on:
       - main
 
 jobs:
-  run_pipeline:
+  trigger_build:
+    permissions:
+      actions: write
     runs-on: ubuntu-latest
 
     steps:
