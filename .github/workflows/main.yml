@@ -4,7 +4,8 @@ on:
   push:
     branches:
       - '*'
-      
+permissions: {}
+
 jobs:
   Trigger_Pipeline:
     permissions:
@@ -18,4 +19,4 @@ jobs:
           workflow: ci.yml
           repo: 15-WG-Tron/pipelines
           ref: main
-          token: ${{secrets.GITHUB_TOKEN}}
+          token: ${{ secrets.github_token }}
