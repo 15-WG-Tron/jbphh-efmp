@@ -19,4 +19,4 @@ jobs:
           repo: 15-WG-Tron/pipelines
           ref: main
           token: ${{ secrets.ORG_TOKEN }}
-          inputs: '{"repository_name" : "${{ github.repository }}" ,  "base_ref" : "${{github.base_ref}}", "head_ref" : "${{github.sha}}"}'
+          inputs: '{"repository_name" : "${{ github.repository }}" ,  "base_ref" : "${{ github.event.pull_request.base.ref }}", "head_ref" : "${{ github.sha }}"}'
