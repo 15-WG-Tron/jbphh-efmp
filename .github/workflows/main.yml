@@ -2,8 +2,7 @@ name: Run CI Pipeline
 
 on:
   push:
-    branches:
-      - '*'
+
 permissions: {}
 
 jobs:
