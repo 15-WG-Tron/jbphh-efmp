@@ -19,6 +19,7 @@
 .DS_Store
 *.pem
 html
+.idea
 
 # debug
 npm-debug.log*
