@@ -1,5 +1,5 @@
 import { server } from './mswServer';
-
+import '@testing-library/jest-dom';
 beforeAll(() => server.listen());
 
 afterEach(() => server.resetHandlers());

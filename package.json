@@ -39,6 +39,7 @@
     "whatwg-fetch": "^3.6.2"
   },
   "devDependencies": {
+    "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^14.0.0",
     "@typescript-eslint/eslint-plugin": "^5.59.9",
     "@typescript-eslint/parser": "^5.59.9",
@@ -52,6 +53,7 @@
     "jsdom": "^22.1.0",
     "msw": "^1.2.1",
     "prettier": "^2.8.8",
+    "vite": "^4.3.9",
     "vitest": "^0.32.0"
   }
 }

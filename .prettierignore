@@ -2,6 +2,7 @@ build
 dist
 coverage
 .next
+html
 cypress
 package-lock.json
 tailwind.config.js
