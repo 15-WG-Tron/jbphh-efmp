@@ -20,7 +20,7 @@
 *.pem
 html
 .idea
-supabase
+supabase/*
 
 # debug
 npm-debug.log*
