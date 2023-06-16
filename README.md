@@ -1,34 +1,73 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Project Name - Local Development Setup
+
+This guide will walk you through the steps to run the project locally on your machine. Follow these instructions to set up the project environment and dependencies.
+
+## Prerequisites
+
+- Git
+- Node.js (>= 12.x)
+- Docker
 
 ## Getting Started
 
-First, run the development mswServer:
+### 1. Clone the Repository
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
+```
+git clone <repository-url>
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### 2. Install Dependencies
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```
+npm ci --legacy-peer-deps
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+This command will perform a clean install of the project dependencies. If you encounter any dependency errors, try running the command with the `--legacy-peer-deps` flag.
 
-## Learn More
+### 3. Invoke Prisma Client
 
-To learn more about Next.js, take a look at the following resources:
+```
+npx prisma
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+This command invokes the Prisma Client and allows you to interact with the database.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+### 4. Generate Prisma Client
 
-## Deploy on Vercel
+```
+npx prisma generate
+```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Running this command will generate the Prisma Client, which enables database access from the code.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+### 5. Set Up Local Supabase Instance
+
+Ensure that Docker is running on your machine before proceeding with the following steps.
+
+```
+npm run createDevDatabase
+```
+
+This command sets up a local instance of Supabase by creating a Docker container with the required database.
+
+Once the Docker container is up and running, copy the database URL and update the `.env` file. If the `.env` file doesn't exist, create a new one and add the following line:
+
+```
+DATABASE_URL="postgresql://postgres:postgres@localhost:54322/postgres"
+```
+
+Make sure to replace the URL with the copied database URL.
+
+## Running the Project
+
+You are now ready to run the project locally. Use the following command to start the application:
+
+```
+npm run dev
+```
+
+This will start the development server and make the application accessible at the provided URL.
+
+## Additional Notes
+
+Feel free to reach out to the project maintainers if you encounter any issues or have any questions.
