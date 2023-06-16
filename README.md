@@ -48,15 +48,31 @@ Ensure that Docker is running on your machine before proceeding with the followi
 npm run createDevDatabase
 ```
 
-This command sets up a local instance of Supabase by creating a Docker container with the required database.
+This command sets up a local instance of Supabase by creating a Docker container with the required database. You only need to run this command once unless you want to recreate the database.
 
-Once the Docker container is up and running, copy the database URL and update the `.env` file. If the `.env` file doesn't exist, create a new one and add the following line:
+To start the database, use the following command:
 
 ```
-DATABASE_URL="postgresql://postgres:postgres@localhost:54322/postgres"
+npm run db:start
 ```
 
-Make sure to replace the URL with the copied database URL.
+To stop the database, use the following command:
+
+```
+npm run db:stop
+```
+
+Once the Docker container is up and running, if the `.env` file does not exist, create a new one. Otherwise, skip this step.
+
+### 6. Update the Database URL, If necessary
+
+If you created a new `.env` file, add the following line and replace `<database-url>` with the copied database URL:
+
+```
+DATABASE_URL=<database-url>
+```
+
+Make sure to replace `<database-url>` with the actual database URL.
 
 ## Running the Project
 
