@@ -6,6 +6,7 @@
 
 - [ ] Feature
 - [ ] Bugfix
+- [ ] Refactor
 - [ ] Documentation
 - [ ] Chore
 - [ ] Style
@@ -23,6 +24,10 @@
 - Bugfix: `bugfix/description-of-bug`
 
   - Example: `bugfix/fix-crash-on-submit`
+
+- Refactor: `refactor/descriptive-refactor-description`
+
+  - Example: `refactor/update-error-handling-logic`
 
 - Documentation: `doc/document-update`
 
