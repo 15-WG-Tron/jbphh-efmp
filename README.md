@@ -1,4 +1,4 @@
-# Project Name - Local Development Setup
+# AlohaCommunity or OhanaOutreach - Local Development Setup
 
 This guide will walk you through the steps to run the project locally on your machine. Follow these instructions to set up the project environment and dependencies.
 
@@ -64,7 +64,7 @@ npm run db:stop
 
 Once the Docker container is up and running, if the `.env` file does not exist, create a new one. Otherwise, skip this step.
 
-### 6. Update the Database URL, If necessary
+### 6. Update the Database URL
 
 If you created a new `.env` file, add the following line and replace `<database-url>` with the copied database URL:
 
@@ -83,6 +83,40 @@ npm run dev
 ```
 
 This will start the development server and make the application accessible at the provided URL.
+
+## Testing
+
+To run unit tests, use the following command:
+
+```
+npm run test:unit
+```
+
+This command will execute all unit tests and provide the test results.
+
+To run tests with code coverage, use the following command:
+
+```
+npm run test
+```
+
+Running this command will execute all tests and generate a code coverage report.
+
+To test a specific file, use the following command:
+
+```
+npm run test:unit "test-name"
+```
+
+Replace `"test-name"` with the actual name of the test file.
+
+To run a specific test with code coverage, use the following command:
+
+```
+npm run test "test-name"
+```
+
+Replace `"test-name"` with the actual name of the test.
 
 ## Additional Notes
 

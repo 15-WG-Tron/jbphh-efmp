@@ -8,6 +8,7 @@ generator client {
 datasource db {
   provider = "postgresql"
   url      = env("DATABASE_URL")
+  directUrl = env("DIRECT_URL")
 }
 
 model User {
@@ -18,4 +19,6 @@ model User {
   email     String
   createdAt DateTime @map("created_at")
   updatedAt DateTime @map("updated_at")
+
+  @@map("user")
 }
