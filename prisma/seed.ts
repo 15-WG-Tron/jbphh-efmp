@@ -1,6 +1,5 @@
 import { PrismaClient, Prisma, User } from '@prisma/client';
-import UserCreateInput = Prisma.UserCreateInput;
-import { getDate } from '@/utils/getDate';
+import { getDate } from '../src/utils/getDate';
 
 const casual = require('casual');
 const prisma = new PrismaClient();
@@ -16,7 +15,7 @@ const createUser = (firstName?: string, lastName?: string, email?: string) => {
   };
 };
 
-const addUserToDb = async (user: UserCreateInput) => {
+const addUserToDb = async (user: Prisma.UserCreateInput) => {
   await prisma.user.create({
     data: {
       firstName: user.firstName,

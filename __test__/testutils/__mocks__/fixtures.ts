@@ -1,5 +1,5 @@
 import { User } from '@prisma/client';
-import { getDate } from '@/utils/getDate';
+import { getDate } from '../../../src/utils/getDate';
 
 export const johnDoe = {
   id: 1,
@@ -9,7 +9,7 @@ export const johnDoe = {
   email: 'johndoe@example.com',
   createdAt: getDate(7),
   updatedAt: getDate(7),
-};
+} satisfies User;
 export const janeSmith = {
   id: 2,
   firstName: 'Jane',
@@ -18,7 +18,7 @@ export const janeSmith = {
   email: 'janesmith@example.com',
   createdAt: getDate(90),
   updatedAt: getDate(72),
-};
+} satisfies User;
 
 export const michaelJohnson = {
   id: 3,
@@ -28,7 +28,7 @@ export const michaelJohnson = {
   email: 'michaeljohnson@example.com',
   createdAt: getDate(500),
   updatedAt: getDate(30),
-};
+} satisfies User;
 
 export const emilyBrown = {
   id: 4,
@@ -38,7 +38,7 @@ export const emilyBrown = {
   email: 'emilybrown@example.com',
   createdAt: getDate(2),
   updatedAt: getDate(2),
-};
+} satisfies User;
 
 export const davidWilson = {
   id: 5,
@@ -48,7 +48,7 @@ export const davidWilson = {
   email: 'davidwilson@example.com',
   createdAt: getDate(9),
   updatedAt: getDate(1),
-};
+} satisfies User;
 export const sarahTaylor = {
   id: 6,
   firstName: 'Sarah',
@@ -57,7 +57,7 @@ export const sarahTaylor = {
   email: 'sarahtaylor@example.com',
   createdAt: getDate(28),
   updatedAt: getDate(1),
-};
+} satisfies User;
 
 export const danielAnderson = {
   id: 7,
@@ -67,7 +67,7 @@ export const danielAnderson = {
   email: 'danielanderson@example.com',
   createdAt: getDate(),
   updatedAt: getDate(),
-};
+} satisfies User;
 export const oliviaLee = {
   id: 8,
   firstName: 'Olivia',
@@ -76,7 +76,7 @@ export const oliviaLee = {
   email: 'olivialee@example.com',
   createdAt: getDate(),
   updatedAt: getDate(),
-};
+} satisfies User;
 export const jamesMiller = {
   id: 9,
   firstName: 'James',
@@ -85,4 +85,4 @@ export const jamesMiller = {
   email: 'jamesmiller@example.com',
   createdAt: getDate(14),
   updatedAt: getDate(2),
-};
+} satisfies User;

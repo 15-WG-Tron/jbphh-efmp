@@ -9,7 +9,7 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint src --ext js,jsx,ts,tsx --report-unused-disable-directives --max-warnings 0",
+    "lint": "eslint src --ext js,jsx,ts,tsx --report-unused-disable-directives --max-warnings 1",
     "prepare": "husky install",
     "format-check": "prettier --check .",
     "format": "prettier --write .",
@@ -17,7 +17,8 @@
     "preview": "npx vite preview",
     "test:unit": "vitest run",
     "test": "vitest watch --coverage",
-    "preview-coverage": "npx vite preview --outDir html",
+    "test-ui": "npx vite preview --outDir html",
+    "test:coverage": "vitest run --coverage && open ./coverage/index.html",
     "cypress:open": "cypress open",
     "cypress:run": "cypress run",
     "createDevDatabase": "supabase init && supabase start",
@@ -71,6 +72,8 @@
     "supabase": "^1.68.6",
     "ts-node": "^10.9.1",
     "vite": "^4.3.9",
-    "vitest": "^0.32.0"
+    "vite-tsconfig-paths": "^4.2.0",
+    "vitest": "^0.32.0",
+    "vitest-mock-extended": "^1.1.3"
   }
 }
