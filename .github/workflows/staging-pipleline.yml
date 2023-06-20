@@ -2,26 +2,26 @@ name: Staging Pipeline
 on: 
   push:
 
- jobs:
-  Generate Prisma Client:
-      runs-on: ubuntu-latest
-      steps:
-       - name: Checkout code
-         uses: actions/checkout@v3.5.3
-         with:
-          fetch-depth: 0
-          ref: ${{ github.ref }}
+jobs:
+    Generate-Prisma-Client:
+        runs-on: ubuntu-latest
+        steps:
+         - name: Checkout code
+           uses: actions/checkout@v3.5.3
+           with:
+            fetch-depth: 0
+            ref: ${{ github.ref }}
 
-       - name: Set up Node
-         uses: actions/setup-node@v2.5.2
+         - name: Set up Node
+           uses: actions/setup-node@v2.5.2
 
-       - name: Install Dependencies
-         run: npm ci --legacy-peer-deps
+         - name: Install Dependencies
+           run: npm ci --legacy-peer-deps
 
-       - name: Generate Prisma Client
-         run: npx prisma generate
-    
-    Deploy Migrations:
+         - name: Generate Prisma Client
+           run: npx prisma generate
+
+    Deploy-Migrations:
       runs-on: ubuntu-latest
       steps:
        - name: Checkout code
