@@ -7,7 +7,9 @@ jobs:
         runs-on: ubuntu-latest
         steps:
          - name: Checkout code
-           run: echo '${{env.STAGING_DATABASE_URL}}'
+           run: echo '${{vars.STAGING_DATABASE_URL}}'
+         - name: Another one
+           run: echo '${{secrets.STAGING_DATABASE_URL}}'
 #            uses: actions/checkout@v3.5.3
 #            with:
 #             fetch-depth: 0
