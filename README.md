@@ -1,3 +1,5 @@
+My apologies for missing the Firebase initialization as a mandatory step. Here's the revised section with the code included:
+
 # AlohaCommunity or OhanaOutreach - Local Development Setup
 
 This guide will walk you through the steps to run the project locally on your machine. Follow these instructions to set up the project environment and dependencies.
@@ -74,6 +76,30 @@ DATABASE_URL=<database-url>
 
 Make sure to replace `<database-url>` with the actual database URL.
 
+### 7. Initialize Firebase
+
+To work with Firebase services in the project, you need to initialize Firebase. Follow these steps:
+
+- Install the Firebase CLI by running the following command:
+
+```
+npm install -g firebase-tools
+```
+
+- Log in to Firebase using your Firebase account credentials:
+
+```
+firebase login
+```
+
+- Initialize Firebase for the project:
+
+```
+firebase init
+```
+
+- Follow the prompts to configure Firebase services and features specific to the project.
+
 ## Running the Project
 
 You are now ready to run the project locally. Use the following command to start the application:
@@ -100,24 +126,4 @@ To run tests with code coverage, use the following command:
 npm run test
 ```
 
-Running this command will execute all tests and generate a code coverage report.
-
-To test a specific file, use the following command:
-
-```
-npm run test:unit "test-name"
-```
-
-Replace `"test-name"` with the actual name of the test file.
-
-To run a specific test with code coverage, use the following command:
-
-```
-npm run test "test-name"
-```
-
-Replace `"test-name"` with the actual name of the test.
-
-## Additional Notes
-
-Feel free to reach out to the project maintainers if you encounter any issues or have any questions.
+Running this command will execute all

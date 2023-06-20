@@ -8,3 +8,4 @@ package-lock.json
 tailwind.config.js
 vitest.config.ts
 tsconfig.*
+.firebase
