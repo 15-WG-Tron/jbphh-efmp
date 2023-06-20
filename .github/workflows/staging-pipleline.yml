@@ -38,7 +38,8 @@ jobs:
          run: npm ci --legacy-peer-deps
 
        - name: Deploy Migrations
-         run: npx prisma migrate deploy
          env:
-            DATABASE_URL: "${{secrets.STAGING_DATABASE_URL}}"
-            DIRECT_URL: "${{secrets.STAGING_DIRECT_DATABASE_URL}}"
+            DATABASE_URL: ${{secrets.STAGING_DATABASE_URL}}
+            DIRECT_URL: ${{secrets.STAGING_DIRECT_DATABASE_URL}}
+         run: npx prisma migrate deploy
+         
