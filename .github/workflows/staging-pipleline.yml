@@ -40,5 +40,3 @@ jobs:
        - name: Deploy Migrations
          run: npx prisma migrate deploy
          env: ${{ secrets.STAGING_DATABASE_URL}}
-
-    
