@@ -1,0 +1,9 @@
+{
+  "projects": {
+    "default": "jbphh-efmp-1",
+    "prod": "jbphh-efmp-prod",
+    "staging": "jbphh-efmp-1"
+  },
+  "targets": {},
+  "etags": {}
+}
