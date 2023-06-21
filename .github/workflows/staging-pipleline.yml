@@ -98,8 +98,8 @@ jobs:
       - name: Deploy To Firebase
         uses: FirebaseExtended/action-hosting-deploy@v0
         with:
-          repoToken: ${{ secrets.ORG_TOKEN }}
-          firebaseServiceAccount: ${{ secrets.FIREBASE_SERVICE_ACCOUNT_JBPHH_EFMP_1 }}
+          repoToken: "${{ secrets.GITHUB_TOKEN }}"
+          firebaseServiceAccount: "${{ secrets.FIREBASE_SERVICE_ACCOUNT_JBPHH_EFMP_1 }}"
           channelId: live
           projectId: jbphh-efmp-1
         env:
