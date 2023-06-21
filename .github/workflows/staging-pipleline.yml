@@ -95,11 +95,16 @@ jobs:
 
       - name: Install Dependencies
         run: npm ci --legacy-peer-deps
+      - name: Install Firebase CLI
+        run: |  
+          npm install -g firebase-tools
+          firebase
+     
       - name: Deploy To Firebase
         uses: FirebaseExtended/action-hosting-deploy@v0
         with:
-          repoToken: ${{ secrets.ORG_TOKEN }}
-          firebaseServiceAccount: ${{ secrets.FIREBASE_SERVICE_ACCOUNT_JBPHH_EFMP_1 }}
+          repoToken: "${{ secrets.ORG_TOKEN }}"
+          firebaseServiceAccount: "${{ secrets.FIREBASE_SERVICE_ACCOUNT_JBPHH_EFMP_1 }}"
           channelId: live
           projectId: jbphh-efmp-1
         env:
