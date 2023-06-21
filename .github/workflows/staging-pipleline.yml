@@ -57,7 +57,7 @@ jobs:
 
   Pen-Testing:
     runs-on: ubuntu-latest
-    needs: Deploy-Migrations
+    needs: E2E-Testing
     steps:
       - name: Checkout code
         uses: actions/checkout@v3.5.3
