@@ -3,7 +3,7 @@ on:
  pull_request:
    types:
      - closed
-
+     
 jobs:
   Generate-Prisma-Client:
     runs-on: ubuntu-latest
