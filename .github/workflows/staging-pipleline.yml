@@ -88,6 +88,8 @@ jobs:
     needs: Pen-Testing
     steps:
       - uses: actions/checkout@v3
+      - uses: actions/setup-node@v2.5.2
+        run: npm ci --legacy-peer-deps
       - uses: FirebaseExtended/action-hosting-deploy@v0
         with:
           repoToken: '${{ secrets.ORG_TOKEN }}'
