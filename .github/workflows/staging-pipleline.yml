@@ -57,9 +57,7 @@ jobs:
         run: npm ci --legacy-peer-deps
 
       - name: Run Cypress
-        uses: cypress-io/github-action@v5
-        with:
-          start: npm start
+        run: npx cypress run
 
   Pen-Testing:
     runs-on: ubuntu-latest
