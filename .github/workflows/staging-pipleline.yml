@@ -1,0 +1,94 @@
+name: Staging Pipeline
+on:
+  pull_request:
+    types: 
+      - closed
+
+jobs:
+  Generate-Prisma-Client:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3.5.3
+        with:
+          fetch-depth: 0
+          ref: ${{ github.ref }}
+
+      - name: Set up Node
+        uses: actions/setup-node@v2.5.2
+
+      - name: Install Dependencies
+        run: npm ci --legacy-peer-deps
+
+      - name: Generate Prisma Client
+        run: npx prisma generate
+
+  Deploy-Migrations:
+    runs-on: ubuntu-latest
+    needs: Generate-Prisma-Client
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3.5.3
+
+      - name: Set up Node
+        uses: actions/setup-node@v2.5.2
+
+      - name: Install Dependencies
+        run: npm ci --legacy-peer-deps
+
+      - name: Deploy Migrations
+        env:
+          DATABASE_URL: ${{secrets.STAGING_DATABASE_URL}}
+          DIRECT_URL: ${{secrets.STAGING_DIRECT_DATABASE_URL}}
+        run: npx prisma migrate deploy
+  
+  E2E-Testing:
+    runs-on: ubuntu-latest
+    needs: Deploy-Migrations
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3.5.3
+
+      - name: Set up Node
+        uses: actions/setup-node@v2.5.2
+
+      - name: Install Dependencies
+        run: npm ci --legacy-peer-deps
+
+      - name: Run Cypress
+        uses: cypress-io/github-actions@v5
+
+  Pen-Testing:
+    runs-on: ubuntu-latest
+    needs: E2E-Testing
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3.5.3
+
+      - name: Set up Node
+        uses: actions/setup-node@v2.5.2
+
+      - name: Install Dependencies
+        run: npm ci --legacy-peer-deps
+
+      - name: ZAP Scan
+        uses: zaproxy/action-full-scan@v0.4.0
+        with:
+          token: ${{ secrets.ORG_TOKEN }}
+          target: 'https://jbphh-efmp-1.firebaseapp.com/'
+          
+  Deploy-to-Staging:
+    runs-on: ubuntu-latest
+    needs: Pen-Testing
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3.5.3
+
+      - name: Set up Node
+        uses: actions/setup-node@v2.5.2
+
+      - name: Install Dependencies
+        run: npm ci --legacy-peer-deps
+      
+      - name: Deploying
+        run: npx firebase deploy --only hosting -P staging
