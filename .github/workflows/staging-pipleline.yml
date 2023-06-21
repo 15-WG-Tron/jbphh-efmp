@@ -1,9 +1,8 @@
 name: Staging Pipeline
 on:
-  push:
-#  pull_request:
-#    types:
-#      - closed
+ pull_request:
+   types:
+     - closed
 
 jobs:
   Generate-Prisma-Client:
