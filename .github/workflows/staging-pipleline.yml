@@ -94,3 +94,5 @@ jobs:
           firebaseServiceAccount: '${{ secrets.FIREBASE_SERVICE_ACCOUNT_JBPHH_EFMP_1 }}'
           channelId: live
           projectId: jbphh-efmp-1
+        env:
+          FIREBASE_CLI_EXPERIMENTS: webframeworks
