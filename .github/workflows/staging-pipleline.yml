@@ -1,8 +1,9 @@
 name: Staging Pipeline
 on:
-  pull_request:
-    types: 
-      - closed
+  push:
+#  pull_request:
+#    types:
+#      - closed
 
 jobs:
   Generate-Prisma-Client:
@@ -57,6 +58,8 @@ jobs:
 
       - name: Run Cypress
         uses: cypress-io/github-actions@v5
+        with:
+          start: npm start
 
   Pen-Testing:
     runs-on: ubuntu-latest
