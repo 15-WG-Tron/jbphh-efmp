@@ -1,5 +1,3 @@
-My apologies for missing the Firebase initialization as a mandatory step. Here's the revised section with the code included:
-
 # AlohaCommunity or OhanaOutreach - Local Development Setup
 
 This guide will walk you through the steps to run the project locally on your machine. Follow these instructions to set up the project environment and dependencies.
