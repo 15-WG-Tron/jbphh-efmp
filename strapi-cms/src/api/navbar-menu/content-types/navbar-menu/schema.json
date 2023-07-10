@@ -1,0 +1,23 @@
+{
+  "kind": "singleType",
+  "collectionName": "navbar_menus",
+  "info": {
+    "singularName": "navbar-menu",
+    "pluralName": "navbar-menus",
+    "displayName": "Navbar-menu",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "body": {
+      "type": "dynamiczone",
+      "components": [
+        "menu.link",
+        "menu.dropdown"
+      ]
+    }
+  }
+}

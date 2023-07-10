@@ -1,8 +1,8 @@
-import './globals.css';
+import '../styles/globals.css';
 import { Inter } from 'next/font/google';
 import React from 'react';
 import AppProvider from '../components/AppProvider';
-import { Navbar } from '../components/Navbar';
+import { Navbar } from '../components/Navbar/Navbar';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -13,13 +13,13 @@ export const metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en">
-      <AppProvider>
-        <body className='container'>
+    <html lang="en" className="bg-white">
+      <body className={`${inter.className} container mx-auto`}>
+        <AppProvider>
           <Navbar />
           {children}
-        </body>
-      </AppProvider>
+        </AppProvider>
+      </body>
     </html>
   );
 }
