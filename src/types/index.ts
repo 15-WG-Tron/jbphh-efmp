@@ -1,14 +1,14 @@
-export type NavbarMenu = {
-  links: NavbarLink[]
-  dropdowns?: NavbarDropdown[]
-}
+export type SidebarContent = {
+  links: SidebarLink[];
+  dropdowns?: SidebarDropdown[];
+};
 
-export type NavbarLink = {
-  title: string
-  href: string
-}
+export type SidebarLink = {
+  title: string;
+  href: string;
+};
 
-export type NavbarDropdown = {
-  title: string
-  links: NavbarLink[]
-}
+export type SidebarDropdown = {
+  title: string;
+  links: SidebarLink[];
+};

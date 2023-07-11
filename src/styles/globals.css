@@ -2,7 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-
 .logo-text {
-    @apply from-pastelGreen via-mediumGreen to-grayishGreen bg-gradient-to-r bg-clip-text text-transparent
+  @apply from-pastelGreen via-mediumGreen to-grayishGreen bg-gradient-to-r bg-clip-text text-transparent;
 }

@@ -10,7 +10,8 @@ module.exports = {
   colors : {
     pastelGreen: '#b8debd',
     mediumGreen: '#77a07c',
-    grayishGreen: '#69716a'
+    grayishGreen: '#69716a',
+    grayishBlue: '#E8F0F7'
   }
     },
   },

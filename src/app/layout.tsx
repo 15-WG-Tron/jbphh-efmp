@@ -2,7 +2,7 @@ import '../styles/globals.css';
 import { Inter } from 'next/font/google';
 import React from 'react';
 import AppProvider from '../components/AppProvider';
-import { Navbar } from '../components/Navbar/Navbar';
+import { Sidebar } from '../components/Sidebar/Sidebar';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -13,10 +13,10 @@ export const metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" className="bg-white">
-      <body className={`${inter.className} container mx-auto`}>
+    <html lang="en" className="bg-grayishBlue">
+      <body className={`${inter.className} flex flex-row justify-between w-full`}>
         <AppProvider>
-          <Navbar />
+          <Sidebar />
           {children}
         </AppProvider>
       </body>
