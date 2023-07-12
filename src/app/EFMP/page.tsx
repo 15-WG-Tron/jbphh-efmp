@@ -1,13 +1,21 @@
 'use client';
-import React, { useState } from 'react';
+import React, { useState, useTransition } from 'react';
 import Image from 'next/image';
+import { EfmpEnrollment } from './EfmpEnrollment';
+import { EfmpAssigment } from './EfmpAssigment';
+import { EfmpFamilySupport } from './EfmpFamilySupport';
 const EfmpMainPage = () => {
-  const [isActive, setIsActive] = useState<boolean>(false);
+  const [isPending, startTransition] = useTransition()
+  const [activeTab, setActiveTab] = useState<number>(0);
+
+  const handleTabClick = (index: number) => {
+    startTransition(() => setActiveTab(index))
+  }
 
   return (
     <>
       <Image src={'/EFMP_Air_Force.jpg'} alt={'Air Force EFMP Logo'} width={600} height={500} />
-      <div className="hero min-h-1/2 bg-base-200 mt-6">
+      <div className="hero min-h-1/2 bg-base-200 mt-6 w-11/12">
         <div className="hero-content text-center text-neutral">
           <div className="max-w-3/4 p-12">
             <h1 className="text-5xl font-bold">EFMP One Stop</h1>
@@ -22,16 +30,16 @@ const EfmpMainPage = () => {
         </div>
       </div>
 
-      <div className="card w-3/4  overflow-auto bg-white shadow mt-10">
-        <div className="tabs text-center">
-          <a className="tab tab-lg tab-lifted">EFMP Identification & Enrollment</a>
-          <a className="tab tab-lg tab-lifted tab-active">EFMP Medical</a>
-          <a className="tab tab-lg tab-lifted">EFMP Assignment</a>
-          <a className="tab tab-lg tab-lifted">EFMP Family Support</a>
+      <div className="card w-11/12 overflow-auto bg-white shadow mt-10">
+        <div className="tabs w-full mx-auto ">
+          <a className={`tab tab-lg tab-lifted ${activeTab === 0 ? 'tab-active' : null}`} onClick={() => handleTabClick(0)}>EFMP ID & Enrollment</a>
+          <a className={`tab tab-lg tab-lifted ${activeTab === 1 ? 'tab-active' : null}`} onClick={() => handleTabClick(1)}>EFMP Assignment Coordination</a>
+          <a className={`tab tab-lg tab-lifted ${activeTab === 2 ? 'tab-active' : null}`} onClick={() => handleTabClick(2)}>EFMP Family Support</a>
         </div>
         <div className="card-body">
-
-
+          {activeTab === 0 && <EfmpEnrollment />}
+          {activeTab === 1 && <EfmpAssigment />}
+          {activeTab === 2 && <EfmpFamilySupport />}
         </div>
       </div>
     </>
