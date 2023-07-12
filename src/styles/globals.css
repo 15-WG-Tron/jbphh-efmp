@@ -7,5 +7,5 @@
 }
 
 .isActive {
-  @apply font-bold underline rounded-xl bg-transparent text-lg text-white
+  @apply font-bold underline rounded-xl bg-transparent text-lg border-transparent
 }
