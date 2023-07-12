@@ -1,0 +1,11 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.logo-text {
+  @apply from-pastelGreen via-mediumGreen to-grayishGreen bg-gradient-to-r bg-clip-text text-transparent;
+}
+
+.isActive {
+  @apply font-bold underline rounded-xl bg-transparent text-lg border-transparent
+}

@@ -7,12 +7,30 @@ module.exports = {
   ],
   theme: {
     extend: {
-      backgroundImage: {
-        'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
-        'gradient-conic':
-          'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
-      },
+  colors : {
+    pastelGreen: '#b8debd',
+    mediumGreen: '#77a07c',
+    grayishGreen: '#69716a',
+    grayishBlue: '#E8F0F7'
+  }
     },
   },
-  plugins: [],
+  daisyui: {
+    themes: [
+        {
+          mytheme: {
+          "primary": "#57bac1",
+          "secondary": "#b8debd",
+          "accent": "#b7ef73",
+          "neutral": "#23252e",
+          "base-100": "#ffffff",
+          "info": "#259be4",
+          "success": "#22bf9f",
+          "warning": "#9d7f06",
+          "error": "#f46052",
+          },
+        },
+      ],
+    },
+  plugins: [require("daisyui")],
 }
