@@ -22,6 +22,7 @@ export const SidebarLink: React.FC<SidebarLinkProps> = ({ linkContent }) => {
         {linkContent.map((link) => {
           const { title, href, Icon } = link;
           const isActive = href === pathname || href === pathname.replace(/\/$/, "")
+
           return (
             <li key={title} className={'mb-3'}>
               <Link href={href} className={`${isActive ? "isActive" : "text-lg text-white hover:text-white"}`}>
