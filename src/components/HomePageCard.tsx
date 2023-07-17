@@ -1,15 +1,25 @@
 
 import React, {JSX, FC} from 'react'
+import { useRouter } from 'next/navigation'
 
 type HomePageCardProps = {
   title: string
   text: string
+  href: string
   // @ts-ignore
   icon: JSX
 }
-export const HomePageCard: FC<HomePageCardProps> = ({title, text, icon}) => {
+
+
+
+export const HomePageCard: FC<HomePageCardProps> = ({title, text, icon, href}) => {
+  const router = useRouter()
+  const onclick = () => {
+    router.push(href)
+  }
+  
   return (
-     <div className={'card bg-white shadow hover:cursor-pointer hover:bg-gray-100'}>
+     <div className={'card bg-white shadow hover:cursor-pointer hover:bg-gray-100'} onClick={onclick}>
             <div className={'card-body'}>
               <div className="flex flex-col w-full border-opacity-50">
                 <div className={'text-secondary text-center w-full mx-auto'}>
