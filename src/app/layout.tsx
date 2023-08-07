@@ -4,6 +4,7 @@ import React from 'react';
 import AppProvider from '../components/AppProvider';
 import { Sidebar } from '../components/Sidebar/Sidebar';
 import { Footer } from '../components/Footer';
+import {NotFoundError} from '../middleware/ErrorHandling';
 
 const inter = Inter({ subsets: ['latin'] });
 

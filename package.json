@@ -39,6 +39,7 @@
     "@mui/icons-material": "^5.13.7",
     "@mui/material": "^5.13.7",
     "@prisma/client": "^4.15.0",
+    "@refinedev/strapi-v4": "^5.2.0",
     "@tanstack/react-query": "^4.29.14",
     "@tanstack/react-query-devtools": "^4.29.14",
     "@testing-library/user-event": "^14.4.3",
