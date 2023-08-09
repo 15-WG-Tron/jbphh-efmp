@@ -24,7 +24,6 @@ npm ci --legacy-peer-deps
 
 This command will perform a clean install of the project dependencies. If you encounter any dependency errors, try running the command with the `--legacy-peer-deps` flag.
 
-
 ## Running the Project
 
 You are now ready to run the project locally. Use the following command to start the application:

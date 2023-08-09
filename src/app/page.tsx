@@ -3,10 +3,8 @@ import { useRouter } from 'next/router';
 import HelpIcon from '@mui/icons-material/Help';
 import GroupsIcon from '@mui/icons-material/Groups';
 import { HomePageCard } from '../components/HomePageCard';
+import { AppError } from '@/middleware/ErrorHandling';
 
-const session = null
-
-if (!session) throw new Error('Test error')
 export default function Home() {
   return (
     <>

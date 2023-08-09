@@ -57,7 +57,7 @@ export class AppError extends Error {
   readonly message: string;
 
   constructor(status: number, message: string) {
-    super('App Error');
+    super('AppError');
     this.status = status;
     this.name = 'AppError';
     this.message = message;

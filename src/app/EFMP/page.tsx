@@ -4,13 +4,14 @@ import Image from 'next/image';
 import { EfmpEnrollment } from './EfmpEnrollment';
 import { EfmpAssigment } from './EfmpAssigment';
 import { EfmpFamilySupport } from './EfmpFamilySupport';
+import { AppError } from '@/middleware/ErrorHandling';
 const EfmpMainPage = () => {
-  const [isPending, startTransition] = useTransition()
+  const [isPending, startTransition] = useTransition();
   const [activeTab, setActiveTab] = useState<number>(0);
 
   const handleTabClick = (index: number) => {
-    startTransition(() => setActiveTab(index))
-  }
+    startTransition(() => setActiveTab(index));
+  };
 
   return (
     <>
@@ -21,9 +22,9 @@ const EfmpMainPage = () => {
             <h1 className="text-5xl font-bold">EFMP One Stop</h1>
             <div className={'flex flex-col items-center p-10 leading-10 text-center'}>
               <p>
-                At Joint Base Pearl Harbor-Hickam, all EFMP program components and the School Liaison are
-                situated together for your convenience, ensuring comprehensive support for your EFMP needs. Our location
-                is at the Military & Family Readiness Center,
+                At Joint Base Pearl Harbor-Hickam, all EFMP program components and the School Liaison are situated
+                together for your convenience, ensuring comprehensive support for your EFMP needs. Our location is at
+                the Military & Family Readiness Center,
               </p>
             </div>
           </div>
@@ -32,9 +33,24 @@ const EfmpMainPage = () => {
 
       <div className="card w-11/12 overflow-auto bg-white shadow mt-10">
         <div className="tabs w-full mx-auto ">
-          <a className={`tab tab-lg tab-lifted ${activeTab === 0 ? 'tab-active' : null}`} onClick={() => handleTabClick(0)}>EFMP ID & Enrollment</a>
-          <a className={`tab tab-lg tab-lifted ${activeTab === 1 ? 'tab-active' : null}`} onClick={() => handleTabClick(1)}>EFMP Assignment Coordination</a>
-          <a className={`tab tab-lg tab-lifted ${activeTab === 2 ? 'tab-active' : null}`} onClick={() => handleTabClick(2)}>EFMP Family Support</a>
+          <a
+            className={`tab tab-lg tab-lifted ${activeTab === 0 ? 'tab-active' : null}`}
+            onClick={() => handleTabClick(0)}
+          >
+            EFMP ID & Enrollment
+          </a>
+          <a
+            className={`tab tab-lg tab-lifted ${activeTab === 1 ? 'tab-active' : null}`}
+            onClick={() => handleTabClick(1)}
+          >
+            EFMP Assignment Coordination
+          </a>
+          <a
+            className={`tab tab-lg tab-lifted ${activeTab === 2 ? 'tab-active' : null}`}
+            onClick={() => handleTabClick(2)}
+          >
+            EFMP Family Support
+          </a>
         </div>
         <div className="card-body">
           {activeTab === 0 && <EfmpEnrollment />}
