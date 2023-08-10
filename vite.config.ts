@@ -27,4 +27,15 @@ export default defineConfig({
 
     css: false,
   },
+  resolve: {
+    alias: {
+      '@/components': '/src/components',
+      '@/const': '/src/const',
+      '@/repository': '/src/repository',
+      '@/types': '/src/types',
+      '@/utils': '/src/utils',
+      '@/app': '/src/app',
+      '@/middleware': '/src/middleware',
+    },
+  },
 });

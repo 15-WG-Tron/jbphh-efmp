@@ -4,6 +4,7 @@ import React from 'react';
 import AppProvider from '../components/AppProvider';
 import { Sidebar } from '../components/Sidebar/Sidebar';
 import { Footer } from '../components/Footer';
+import { NotFoundError } from '../middleware/ErrorHandling';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -13,16 +14,22 @@ export const metadata = {
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
+  const errorPage = children?.props?.childProp?.segment.includes('not-found');
+
   return (
     <html lang="en" className="bg-base-100 ">
-      <body className={`${inter.className} w-full text-black`}>
-        <AppProvider>
-          <Sidebar>
-            {children}
-            <Footer />
-          </Sidebar>
-        </AppProvider>
-      </body>
+      {errorPage === false ? (
+        <body className={`${inter.className} w-full text-black`}>
+          <AppProvider>
+            <Sidebar>
+              {children}
+              <Footer />
+            </Sidebar>
+          </AppProvider>
+        </body>
+      ) : (
+        <body>{children}</body>
+      )}
     </html>
   );
 }
