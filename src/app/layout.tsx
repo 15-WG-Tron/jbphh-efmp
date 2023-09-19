@@ -2,9 +2,8 @@ import '../styles/globals.css';
 import { Inter } from 'next/font/google';
 import React from 'react';
 import AppProvider from '../components/AppProvider';
-import { Sidebar } from '../components/Sidebar/Sidebar';
-import { Footer } from '../components/Footer';
-import { NotFoundError } from '../middleware/ErrorHandling';
+import { Sidebar } from '@/components/Sidebar/Sidebar';
+import { Footer } from '@/components/Footer';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -15,6 +14,7 @@ export const metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   const errorPage = children?.props?.childProp?.segment.includes('not-found');
+
 
   return (
     <html lang="en" className="bg-base-100 ">
