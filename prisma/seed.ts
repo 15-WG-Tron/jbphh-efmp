@@ -1,56 +1,68 @@
 import { Prisma, PrismaClient } from '@prisma/client';
-import { createDirectus, rest } from '@directus/sdk';
+import {
+  adminRole,
+  andrewMonitor,
+  bobJones,
+  coreyAdmin,
+  editorRole,
+  efmpMedical,
+  legalServices,
+  permissions,
+  sarahParker,
+  schoolLiaison,
+} from './__mock__/fixtures';
 
-const client = createDirectus('http://localhost:8055').with(rest());
+export type User = Prisma.directus_usersCreateInput;
+export type Role = Prisma.directus_rolesCreateInput;
+export type Organization = Prisma.organizationCreateInput;
+export type Permissions = Prisma.directus_permissionsCreateManyInput;
 
 const prisma = new PrismaClient();
 
-const password = "$argon2id$v=19$m=65536,t=3,p=4$zg6OSwYp91muPnplrJAEvg$IE/bCBc5+I0OKyfrXjD8AyFC619Pbvwtp6PFy8hTHqU"
-const bobJones: User = {
-  id: '2d2f2e42-8a1d-4a63-bfd9-7e8db20d5c6c',
-  first_name: 'Bob',
-  last_name: 'Jones',
-  email: 'bobjones@gmail.com',
-  password: password,
-
+const createUser = async (user: User) => {
+  await prisma.directus_users.create({ data: user });
 };
 
-const andrewMonitor: User = {
-  id: '91e674d9-951b-4c57-bc84-3d6c53ebf589',
-  first_name: 'Andrew',
-  last_name: 'Monitor',
-  email: 'amonitor@gmail.com',
-  password: password,
- 
-};
-
-const adminUser: User = {
-  id: 'f212e1a3-7f4e-492c-80e2-aae45d2aa437',
-  first_name: 'Admin',
-  last_name: 'User',
-  email: password,
-  password: 'd1r3ctu5',
-};
-
-type User = Prisma.directus_usersCreateInput;
-
-const seedUsers = async () => {
-const createUser = async (userInfo: User) => {
-  await prisma.directus_users.create({
-    data: userInfo,
+const createDirectusRole = async (role: Role) => {
+  await prisma.directus_roles.create({
+    data: role,
   });
 };
+const createOrganization = async (org: Organization) => {
+  await prisma.organization.create({ data: org });
+};
+const createPermissions = async (permissions: Permissions[]) => {
+  await prisma.directus_permissions.createMany({ data: permissions });
+};
+const seedOrganization = async () => {
+  await createOrganization(efmpMedical);
+  await createOrganization(legalServices);
+  await createOrganization(schoolLiaison);
+};
+const seedRoles = async () => {
+  await createDirectusRole(adminRole);
+  await createDirectusRole(editorRole);
+};
 
-await createUser(bobJones);
-await createUser(andrewMonitor);
-await createUser(adminUser);
-}
+const seedDirectusUsers = async () => {
+  await createUser(bobJones);
+  await createUser(andrewMonitor);
+  await createUser(sarahParker);
+};
+
+const seedDirectusPermissions = async () => {
+  await createPermissions(permissions);
+};
 
 const seedDev = async () => {
-  await seedUsers()
+  await seedRoles();
+  await createUser(coreyAdmin)
+  await seedOrganization();
+  await seedDirectusUsers();
+  await seedDirectusPermissions();
 };
 async function main() {
-  await seedDev()
+  await seedDev();
 }
 
 main()

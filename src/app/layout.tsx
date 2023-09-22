@@ -15,7 +15,6 @@ export const metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   const errorPage = children?.props?.childProp?.segment.includes('not-found');
 
-
   return (
     <html lang="en" className="bg-base-100 ">
       {errorPage === false ? (

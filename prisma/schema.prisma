@@ -7,20 +7,6 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
-model checklist {
-  id                                                    Int             @id @default(autoincrement())
-  status                                                String          @default("draft") @db.VarChar(255)
-  user_created                                          String?         @db.Uuid
-  date_created                                          DateTime?       @db.Timestamptz(6)
-  user_updated                                          String?         @db.Uuid
-  date_updated                                          DateTime?       @db.Timestamptz(6)
-  name                                                  String?         @db.VarChar(255)
-  organization                                          Int?
-  organization_checklist_organizationToorganization     organization?   @relation("checklist_organizationToorganization", fields: [organization], references: [id], onUpdate: NoAction, map: "checklist_organization_foreign")
-  directus_users_checklist_user_createdTodirectus_users directus_users? @relation("checklist_user_createdTodirectus_users", fields: [user_created], references: [id], onDelete: NoAction, onUpdate: NoAction, map: "checklist_user_created_foreign")
-  directus_users_checklist_user_updatedTodirectus_users directus_users? @relation("checklist_user_updatedTodirectus_users", fields: [user_updated], references: [id], onDelete: NoAction, onUpdate: NoAction, map: "checklist_user_updated_foreign")
-}
-
 model directus_activity {
   id                 Int                  @id @default(autoincrement())
   action             String               @db.VarChar(45)
@@ -116,10 +102,8 @@ model directus_files {
   location                                                              String?
   tags                                                                  String?
   metadata                                                              Json?               @db.Json
-  organization                                                          Int?
   directus_folders                                                      directus_folders?   @relation(fields: [folder], references: [id], onUpdate: NoAction, map: "directus_files_folder_foreign")
   directus_users_directus_files_modified_byTodirectus_users             directus_users?     @relation("directus_files_modified_byTodirectus_users", fields: [modified_by], references: [id], onDelete: NoAction, onUpdate: NoAction, map: "directus_files_modified_by_foreign")
-  organization_directus_files_organizationToorganization                organization?       @relation("directus_files_organizationToorganization", fields: [organization], references: [id], onUpdate: NoAction, map: "directus_files_organization_foreign")
   directus_users_directus_files_uploaded_byTodirectus_users             directus_users?     @relation("directus_files_uploaded_byTodirectus_users", fields: [uploaded_by], references: [id], onDelete: NoAction, onUpdate: NoAction, map: "directus_files_uploaded_by_foreign")
   directus_settings_directus_settings_project_logoTodirectus_files      directus_settings[] @relation("directus_settings_project_logoTodirectus_files")
   directus_settings_directus_settings_public_backgroundTodirectus_files directus_settings[] @relation("directus_settings_public_backgroundTodirectus_files")
@@ -374,7 +358,7 @@ model directus_users {
   external_identifier                                                     String?                  @unique(map: "directus_users_external_identifier_unique") @db.VarChar(255)
   auth_data                                                               Json?                    @db.Json
   email_notifications                                                     Boolean?                 @default(true)
-  org_id                                                                  Int?
+  organization                                                            Int?
   checklist_checklist_user_createdTodirectus_users                        checklist[]              @relation("checklist_user_createdTodirectus_users")
   checklist_checklist_user_updatedTodirectus_users                        checklist[]              @relation("checklist_user_updatedTodirectus_users")
   directus_dashboards                                                     directus_dashboards[]
@@ -388,7 +372,7 @@ model directus_users {
   directus_presets                                                        directus_presets[]
   directus_sessions                                                       directus_sessions[]
   directus_shares                                                         directus_shares[]
-  organization_directus_users_org_idToorganization                        organization?            @relation("directus_users_org_idToorganization", fields: [org_id], references: [id], onUpdate: NoAction, map: "directus_users_org_id_foreign")
+  organization_directus_users_organizationToorganization                  organization?            @relation("directus_users_organizationToorganization", fields: [organization], references: [id], onUpdate: NoAction, map: "directus_users_organization_foreign")
   directus_roles                                                          directus_roles?          @relation(fields: [role], references: [id], onUpdate: NoAction, map: "directus_users_role_foreign")
   landingPage_landingPage_user_createdTodirectus_users                    landingPage[]            @relation("landingPage_user_createdTodirectus_users")
   landingPage_landingPage_user_updatedTodirectus_users                    landingPage[]            @relation("landingPage_user_updatedTodirectus_users")
@@ -408,36 +392,49 @@ model directus_webhooks {
   headers     Json?   @db.Json
 }
 
+model checklist {
+  date_created                                          DateTime?       @db.Timestamptz(6)
+  date_updated                                          DateTime?       @db.Timestamptz(6)
+  id                                                    Int             @id @default(autoincrement())
+  organization                                          Int?
+  status                                                String          @default("draft") @db.VarChar(255)
+  title                                                 String?         @db.VarChar(255)
+  user_created                                          String?         @db.Uuid
+  user_updated                                          String?         @db.Uuid
+  organization_checklist_organizationToorganization     organization?   @relation("checklist_organizationToorganization", fields: [organization], references: [id], onUpdate: NoAction, map: "checklist_organization_foreign")
+  directus_users_checklist_user_createdTodirectus_users directus_users? @relation("checklist_user_createdTodirectus_users", fields: [user_created], references: [id], onDelete: NoAction, onUpdate: NoAction, map: "checklist_user_created_foreign")
+  directus_users_checklist_user_updatedTodirectus_users directus_users? @relation("checklist_user_updatedTodirectus_users", fields: [user_updated], references: [id], onDelete: NoAction, onUpdate: NoAction, map: "checklist_user_updated_foreign")
+}
+
 model landingPage {
+  Title                                                   String?         @db.VarChar(255)
+  date_created                                            DateTime?       @db.Timestamptz(6)
+  date_updated                                            DateTime?       @db.Timestamptz(6)
   id                                                      Int             @id @default(autoincrement())
+  organization                                            Int?
+  organizationImage                                       String?         @db.Uuid
+  pageContent                                             String?
+  servicesProvided                                        Json?           @db.Json
   status                                                  String          @default("draft") @db.VarChar(255)
   user_created                                            String?         @db.Uuid
-  date_created                                            DateTime?       @db.Timestamptz(6)
   user_updated                                            String?         @db.Uuid
-  date_updated                                            DateTime?       @db.Timestamptz(6)
-  Title                                                   String?         @db.VarChar(255)
-  org_image                                               String?         @db.Uuid
-  servicesProvided                                        Json?           @db.Json
-  organization                                            Int?
-  page_content                                            String?
-  directus_files                                          directus_files? @relation(fields: [org_image], references: [id], onUpdate: NoAction, map: "landingpage_org_image_foreign")
   organization_landingPage_organizationToorganization     organization?   @relation("landingPage_organizationToorganization", fields: [organization], references: [id], onUpdate: NoAction, map: "landingpage_organization_foreign")
+  directus_files                                          directus_files? @relation(fields: [organizationImage], references: [id], onUpdate: NoAction, map: "landingpage_organizationimage_foreign")
   directus_users_landingPage_user_createdTodirectus_users directus_users? @relation("landingPage_user_createdTodirectus_users", fields: [user_created], references: [id], onDelete: NoAction, onUpdate: NoAction, map: "landingpage_user_created_foreign")
   directus_users_landingPage_user_updatedTodirectus_users directus_users? @relation("landingPage_user_updatedTodirectus_users", fields: [user_updated], references: [id], onDelete: NoAction, onUpdate: NoAction, map: "landingpage_user_updated_foreign")
 }
 
 model organization {
-  id                                                       Int              @id @default(autoincrement())
-  status                                                   String           @default("draft") @db.VarChar(255)
-  user_created                                             String?          @db.Uuid
   date_created                                             DateTime?        @db.Timestamptz(6)
-  user_updated                                             String?          @db.Uuid
   date_updated                                             DateTime?        @db.Timestamptz(6)
+  id                                                       Int              @id @default(autoincrement())
   name                                                     String?          @db.VarChar(255)
   shortName                                                String?          @db.VarChar(255)
+  status                                                   String           @default("draft") @db.VarChar(255)
+  user_created                                             String?          @db.Uuid
+  user_updated                                             String?          @db.Uuid
   checklist_checklist_organizationToorganization           checklist[]      @relation("checklist_organizationToorganization")
-  directus_files_directus_files_organizationToorganization directus_files[] @relation("directus_files_organizationToorganization")
-  directus_users_directus_users_org_idToorganization       directus_users[] @relation("directus_users_org_idToorganization")
+  directus_users_directus_users_organizationToorganization directus_users[] @relation("directus_users_organizationToorganization")
   landingPage_landingPage_organizationToorganization       landingPage[]    @relation("landingPage_organizationToorganization")
   directus_users_organization_user_createdTodirectus_users directus_users?  @relation("organization_user_createdTodirectus_users", fields: [user_created], references: [id], onDelete: NoAction, onUpdate: NoAction, map: "organization_user_created_foreign")
   directus_users_organization_user_updatedTodirectus_users directus_users?  @relation("organization_user_updatedTodirectus_users", fields: [user_updated], references: [id], onDelete: NoAction, onUpdate: NoAction, map: "organization_user_updated_foreign")
