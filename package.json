@@ -21,7 +21,7 @@
     "test:coverage": "vitest run --coverage && open ./coverage/index.html",
     "cypress:open": "cypress open",
     "cypress:run": "cypress run",
-    "createDevDatabase": "supabase init && supabase start",
+    "createDevDatabase": "supabase init && supabase start && directus database install && prisma migrate dev --skip-seed && directus schema apply --yes ./snapshot.yaml && prisma db seed",
     "db:generate": "prisma generate",
     "db:start": "supabase start",
     "db:stop": "supabase stop",
@@ -29,7 +29,7 @@
     "db:studio": "prisma studio",
     "db:status": "supabase status",
     "db:reset": "prisma migrate reset --force && npx directus schema apply --yes ./snapshot.yaml ",
-    "db:seed": "prisma db seed",
+    "db:seed": "prisma db seed && npx directus schema apply",
     "db:schema-format": "npx prisma format"
   },
   "dependencies": {

@@ -2,6 +2,10 @@ version: 1
 directus: 13.0.0
 vendor: postgres
 collections:
+  - collection: _prisma_migrations
+    meta: null
+    schema:
+      name: _prisma_migrations
   - collection: checklist
     meta:
       accountability: all
@@ -72,6 +76,166 @@ collections:
     schema:
       name: organization
 fields:
+  - collection: _prisma_migrations
+    field: applied_steps_count
+    type: integer
+    meta: null
+    schema:
+      name: applied_steps_count
+      table: _prisma_migrations
+      data_type: integer
+      default_value: 0
+      max_length: null
+      numeric_precision: 32
+      numeric_scale: 0
+      is_nullable: false
+      is_unique: false
+      is_primary_key: false
+      is_generated: false
+      generation_expression: null
+      has_auto_increment: false
+      foreign_key_table: null
+      foreign_key_column: null
+  - collection: _prisma_migrations
+    field: checksum
+    type: string
+    meta: null
+    schema:
+      name: checksum
+      table: _prisma_migrations
+      data_type: character varying
+      default_value: null
+      max_length: 64
+      numeric_precision: null
+      numeric_scale: null
+      is_nullable: false
+      is_unique: false
+      is_primary_key: false
+      is_generated: false
+      generation_expression: null
+      has_auto_increment: false
+      foreign_key_table: null
+      foreign_key_column: null
+  - collection: _prisma_migrations
+    field: finished_at
+    type: timestamp
+    meta: null
+    schema:
+      name: finished_at
+      table: _prisma_migrations
+      data_type: timestamp with time zone
+      default_value: null
+      max_length: null
+      numeric_precision: null
+      numeric_scale: null
+      is_nullable: true
+      is_unique: false
+      is_primary_key: false
+      is_generated: false
+      generation_expression: null
+      has_auto_increment: false
+      foreign_key_table: null
+      foreign_key_column: null
+  - collection: _prisma_migrations
+    field: id
+    type: string
+    meta: null
+    schema:
+      name: id
+      table: _prisma_migrations
+      data_type: character varying
+      default_value: null
+      max_length: 36
+      numeric_precision: null
+      numeric_scale: null
+      is_nullable: false
+      is_unique: true
+      is_primary_key: true
+      is_generated: false
+      generation_expression: null
+      has_auto_increment: false
+      foreign_key_table: null
+      foreign_key_column: null
+  - collection: _prisma_migrations
+    field: logs
+    type: text
+    meta: null
+    schema:
+      name: logs
+      table: _prisma_migrations
+      data_type: text
+      default_value: null
+      max_length: null
+      numeric_precision: null
+      numeric_scale: null
+      is_nullable: true
+      is_unique: false
+      is_primary_key: false
+      is_generated: false
+      generation_expression: null
+      has_auto_increment: false
+      foreign_key_table: null
+      foreign_key_column: null
+  - collection: _prisma_migrations
+    field: migration_name
+    type: string
+    meta: null
+    schema:
+      name: migration_name
+      table: _prisma_migrations
+      data_type: character varying
+      default_value: null
+      max_length: 255
+      numeric_precision: null
+      numeric_scale: null
+      is_nullable: false
+      is_unique: false
+      is_primary_key: false
+      is_generated: false
+      generation_expression: null
+      has_auto_increment: false
+      foreign_key_table: null
+      foreign_key_column: null
+  - collection: _prisma_migrations
+    field: rolled_back_at
+    type: timestamp
+    meta: null
+    schema:
+      name: rolled_back_at
+      table: _prisma_migrations
+      data_type: timestamp with time zone
+      default_value: null
+      max_length: null
+      numeric_precision: null
+      numeric_scale: null
+      is_nullable: true
+      is_unique: false
+      is_primary_key: false
+      is_generated: false
+      generation_expression: null
+      has_auto_increment: false
+      foreign_key_table: null
+      foreign_key_column: null
+  - collection: _prisma_migrations
+    field: started_at
+    type: timestamp
+    meta: null
+    schema:
+      name: started_at
+      table: _prisma_migrations
+      data_type: timestamp with time zone
+      default_value: now()
+      max_length: null
+      numeric_precision: null
+      numeric_scale: null
+      is_nullable: false
+      is_unique: false
+      is_primary_key: false
+      is_generated: false
+      generation_expression: null
+      has_auto_increment: false
+      foreign_key_table: null
+      foreign_key_column: null
   - collection: checklist
     field: date_created
     type: timestamp

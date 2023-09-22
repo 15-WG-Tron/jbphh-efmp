@@ -22,15 +22,58 @@ export const editorRole = {
   app_access: true,
 };
 
+export const coreyAdmin = {
+  id: 'f212e1a3-7f4e-492c-80e2-aae45d2aa437',
+  first_name: 'Corey',
+  last_name: 'Admin',
+  email: 'cadmin@gmail.com',
+  password: password,
+  role: adminRole.id,
+  status: 'active',
+};
+
+export const efmpMedical = {
+  id: 1,
+  name: 'EFMP Medical',
+  shortName: 'Medical',
+  status: 'published',
+  user_created: coreyAdmin.id,
+  user_updated: null,
+  date_created: getDate(),
+  date_updated: null,
+};
+
+export const legalServices = {
+  id: 2,
+  name: 'Legal Services',
+  shortName: 'Legal',
+  status: 'published',
+  user_created: coreyAdmin.id,
+  user_updated: null,
+  date_created: getDate(),
+  date_updated: null,
+};
+
+export const schoolLiaison = {
+  id: 3,
+  name: 'School Liaison',
+  shortName: 'CYP',
+  status: 'published',
+  user_created: coreyAdmin.id,
+  user_updated: null,
+  date_created: getDate(),
+  date_updated: null,
+};
+
 export const bobJones = {
   id: '2d2f2e42-8a1d-4a63-bfd9-7e8db20d5c6c',
   first_name: 'Bob',
   last_name: 'Jones',
-  email: 'bobjones@gmail.com',
+  email: 'bjones@gmail.com',
   password: password,
   role: editorRole.id,
   status: 'active',
-  organization: 1
+  organization: efmpMedical.id,
 };
 
 export const andrewMonitor = {
@@ -41,17 +84,7 @@ export const andrewMonitor = {
   password: password,
   role: editorRole.id,
   status: 'active',
-  organization: 2
-};
-
-export const coreyAdmin = {
-  id: 'f212e1a3-7f4e-492c-80e2-aae45d2aa437',
-  first_name: 'Corey',
-  last_name: 'Admin',
-  email: 'admin@example.com',
-  password: password,
-  role: adminRole.id,
-  status: 'active',
+  organization: legalServices.id,
 };
 
 export const sarahParker = {
@@ -62,7 +95,7 @@ export const sarahParker = {
   password: password,
   role: editorRole.id,
   status: 'active',
-  organization: 3
+  organization: schoolLiaison.id,
 };
 
 export const permissions = [
@@ -252,77 +285,35 @@ export const permissions = [
     role: editorRole.id,
     collection: 'organization',
     action: 'read',
-    permissions: { _and: [{ id: { _eq: '$CURRENT_USER.organization.id' } }] },
+    permissions: {"_and":[{"id":{"_eq":"$CURRENT_USER.organization.id"}}]},
     fields: 'id,status,name,shortName,user_created,date_created,user_updated,date_updated,checklist,users',
   },
   {
     role: editorRole.id,
     collection: 'landingPage',
     action: 'read',
-    permissions: { _and: [{ organization: { id: { _eq: '$CURRENT_USER.organization.id' } } }] },
-    fields:
-      'id,status,Title,organizationImage,pageContent,user_created,date_created,user_updated,date_updated,servicesProvided,organization',
+    permissions: {"_and":[{"organization":{"id":{"_eq":"$CURRENT_USER.organization.id"}}}]},
+    fields: '*',
   },
   {
     role: editorRole.id,
     collection: 'checklist',
     action: 'read',
-    permissions: { _and: [{ organization: { id: { _eq: '$CURRENT_USER.organization.id' } } }] },
-    fields: 'id,status,title,user_created,date_created,user_updated,date_updated,organization',
+    permissions:{"_and":[{"organization":{"id":{"_eq":"$CURRENT_USER.organization.id"}}}]},
+    fields: '*',
   },
   {
     role: editorRole.id,
     collection: 'checklist',
     action: 'update',
-    permissions: { _and: [{ organization: { id: { _eq: '$CURRENT_USER.organization.id' } } }] },
-    fields: 'id,status,title,user_created,date_created,user_updated,date_updated,organization',
+    permissions: {},
+    fields: '*',
   },
   {
     role: editorRole.id,
     collection: 'landingPage',
     action: 'update',
-    permissions: { _and: [{ organization: { id: { _eq: '$CURRENT_USER.organization.id' } } }] },
-    fields:
-      'id,status,Title,organizationImage,pageContent,user_created,date_created,user_updated,date_updated,servicesProvided,organization',
-  },
-  {
-    role: editorRole.id,
-    collection: 'organization',
-    action: 'update',
-    permissions: { _and: [{ id: { _eq: '$CURRENT_USER.organization.id' } }] },
-    fields: 'id,status,name,shortName,user_created,date_created,user_updated,date_updated,checklist,users',
+    permissions: {},
+    fields: '*',
   },
 ];
-
-export const efmpMedical = {
-  id: 1,
-  name: 'EFMP Medical',
-  shortName: 'Medical',
-  status: 'published',
-  user_created: coreyAdmin.id,
-  user_updated: null,
-  date_created: getDate(),
-  date_updated: null,
-};
-
-export const legalServices = {
-  id: 2,
-  name: 'Legal Services',
-  shortName: 'Legal',
-  status: 'published',
-  user_created: coreyAdmin.id,
-  user_updated: null,
-  date_created: getDate(),
-  date_updated: null,
-};
-
-export const schoolLiaison = {
-  id: 3,
-  name: 'School Liaison',
-  shortName: 'CYP',
-  status: 'published',
-  user_created: coreyAdmin.id,
-  user_updated: null,
-  date_created: getDate(),
-  date_updated: null,
-};
