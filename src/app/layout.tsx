@@ -2,9 +2,8 @@ import '../styles/globals.css';
 import { Inter } from 'next/font/google';
 import React from 'react';
 import AppProvider from '../components/AppProvider';
-import { Sidebar } from '../components/Sidebar/Sidebar';
-import { Footer } from '../components/Footer';
-import { NotFoundError } from '../middleware/ErrorHandling';
+import { Sidebar } from '@/components/Sidebar/Sidebar';
+import { Footer } from '@/components/Footer';
 
 const inter = Inter({ subsets: ['latin'] });
 
