@@ -7,7 +7,7 @@ import { AppError } from '@/middleware/ErrorHandling';
 
 export default function Home() {
   return (
-    <>
+    <div className="w-11/12 mx-auto">
       <div className="hero min-h-1/2 bg-base-200 w-11/12">
         <div className="hero-content text-center">
           <div className="max-w-3/4 p-12">
@@ -44,6 +44,6 @@ export default function Home() {
           <HomePageCard title={'F.A.Q'} text={'asdasdasdasd'} icon={<GroupsIcon />} />
         </div>
       </div>
-    </>
+    </div>
   );
 }

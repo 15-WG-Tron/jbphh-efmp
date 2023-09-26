@@ -30,7 +30,9 @@
     "db:status": "supabase status",
     "db:reset": "prisma migrate reset --force && npx directus schema apply --yes ./snapshot.yaml ",
     "db:seed": "prisma db seed && npx directus schema apply",
-    "db:schema-format": "npx prisma format"
+    "db:schema-format": "npx prisma format",
+    "createSnapshot" : "npx directus schema snapshot --yes ./snapshot.yaml",
+    "startDirectus" : "npx directus start",
   },
   "dependencies": {
     "@directus/sdk": "^11.0.3",
