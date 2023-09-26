@@ -2,7 +2,7 @@ import '../styles/globals.css';
 import { Inter } from 'next/font/google';
 import React from 'react';
 import AppProvider from '../components/AppProvider';
-import { Sidebar } from '@/components/Sidebar/Sidebar';
+import { Navbar } from '@/components/Navbar/Navbar';
 import { Footer } from '@/components/Footer';
 
 const inter = Inter({ subsets: ['latin'] });
@@ -18,12 +18,12 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="en" className="bg-base-100 ">
       {errorPage === false ? (
-        <body className={`${inter.className} w-full text-black`}>
+        <body className={`${inter.className} w-full`}>
           <AppProvider>
-            <Sidebar>
+            <Navbar>
               {children}
               <Footer />
-            </Sidebar>
+            </Navbar>
           </AppProvider>
         </body>
       ) : (

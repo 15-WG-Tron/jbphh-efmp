@@ -11,7 +11,7 @@ type SidebarLinkProps = {
   }[];
 };
 
-export const SidebarLink: React.FC<SidebarLinkProps> = ({ linkContent }) => {
+export const NavbarLinks: React.FC<SidebarLinkProps> = ({ linkContent }) => {
   const pathname = usePathname();
 
   return (
