@@ -7,5 +7,29 @@
 }
 
 .isActive {
-  @apply font-bold text-base-100 text-lg underline;
+  @apply font-bold text-base-100 text-lg underline underline-offset-8 animate-pulse;
 }
+
+body::-webkit-scrollbar {
+  display: none;
+}
+
+body::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+html {
+  scrollbar-width: none;
+}
+
+.active-nav {
+  visibility: visible;
+  transition: all 0.5s;
+}
+
+.hidden-nav {
+  visibility: hidden;
+  transition: all 0.5s;
+  transform: translateY(-100%);
+}
+

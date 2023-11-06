@@ -1,14 +1,5 @@
-export type SidebarContent = {
-  links: SidebarLink[];
-  dropdowns?: SidebarDropdown[];
-};
-
-export type SidebarLink = {
+export type Link = {
   title: string;
   href: string;
 };
 
-export type SidebarDropdown = {
-  title: string;
-  links: SidebarLink[];
-};
