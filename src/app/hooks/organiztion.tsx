@@ -1,4 +1,4 @@
-import { useQuery, useQueryClient } from "@tanstack/react-query";
+import { useQuery } from "@tanstack/react-query";
 import axios from "axios";
 
 export const organizationQueryKeys = {
@@ -19,8 +19,6 @@ type Organization = {
 
 }
 export const useGetOrganization = () => {
-  const queryClient = useQueryClient()
-  queryClient.invalidateQueries(organizationQueryKeys.organization())
 
   return useQuery<Organization[]>(organizationQueryKeys.organization(), () => axios.get('http://localhost:8055/items/organization').then(response => response.data.data)) 
 
