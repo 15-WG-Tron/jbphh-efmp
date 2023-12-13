@@ -1,53 +1,125 @@
 # JBPHH Ohana
 
-This guide will walk you through the steps to run the project locally on your machine. Follow these instructions to set up the project environment and dependencies.
+This guide will help you run the JBPHH Ohana project on your local machine. Follow these steps to set up your environment and dependencies.
 
 ## Prerequisites
 
-- Git
-- Node.js (>= 12.x)
-- Docker
+Ensure you have these prerequisites installed on your machine:
+
+- **Git**: Version control for managing the codebase.
+- **Node.js (>= 12.x)**: JavaScript runtime for running the frontend.
+- **Docker**: Containerization platform for managing services like the database.
 
 ## Getting Started
 
-### 1. Clone the Repository
+1. **Clone the Repository**
 
+   Clone the project repository to your local machine. Replace `<repository-url>` with the URL of the project repository.
+
+   ```bash
+   git clone <repository-url>
+   ```
+
+2. **Install Dependencies**
+
+   Navigate to the project directory and install the required dependencies:
+
+   ```bash
+   npm ci --legacy-peer-deps
+   ```
+
+   Use the `--legacy-peer-deps` flag if you encounter dependency errors.
+
+## Initializing the Database (First-time Setup)
+
+If setting up the project for the first time, initialize and start the database container and the Directus backend using:
+
+```bash
+npm run createDevDatabase
 ```
-git clone <repository-url>
-```
 
-### 2. Install Dependencies
+## Running the Frontend
 
-```
-npm ci --legacy-peer-deps
-```
+Start the frontend of the JBPHH Ohana project with:
 
-This command will perform a clean install of the project dependencies. If you encounter any dependency errors, try running the command with the `--legacy-peer-deps` flag.
-
-## Running the Project
-
-You are now ready to run the project locally. Use the following command to start the application:
-
-```
+```bash
 npm run dev
 ```
 
-This will start the development server and make the application accessible at the provided URL.
+This will launch the development server and make the application accessible at the provided URL.
+
+## Running the Backend (Directus)
+
+To run the Directus backend, use:
+
+```bash
+npx directus start
+```
+
+## Managing the Database
+
+For database management, use the following scripts:
+
+- **Start the Database**:
+
+  ```bash
+  npm run db:start
+  ```
+
+- **Stop the Database**:
+
+  ```bash
+  npm run db:stop
+  ```
+
+- **Check Database Status**:
+
+  ```bash
+  npm run db:status
+  ```
+
+- **View Database Tables**:
+
+  ```bash
+  npm run db:studio
+  ```
+
+- **Reset the Database**:
+
+  ```bash
+  npm run db:reset
+  ```
+
+- **Seed the Database**:
+
+  ```bash
+  npm run db:seed
+  ```
+
+Please ensure the database is running before starting Directus.
+
+## Creating Snapshots
+
+When modifying the data model, create a snapshot for consistent changes:
+
+```bash
+npm run createSnapshot
+```
 
 ## Testing
 
-To run unit tests, use the following command:
+To ensure project stability, run tests:
 
-```
-npm run test:unit
-```
+- **Run Unit Tests**:
 
-This command will execute all unit tests and provide the test results.
+  ```bash
+  npm run test:unit
+  ```
 
-To run tests with code coverage, use the following command:
+- **Run Tests with Code Coverage**:
 
-```
-npm run test
-```
+  ```bash
+  npm run test
+  ```
 
-Running this command will execute all
+These commands facilitate database management and testing for your project. Happy coding!

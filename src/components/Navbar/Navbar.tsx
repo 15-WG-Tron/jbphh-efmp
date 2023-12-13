@@ -1,4 +1,5 @@
 'use client';
+
 import Image from 'next/image';
 import { NavbarLink } from '@/components/Navbar/NavbarLink';
 import { useScroll } from '@/app/hooks/useScroll';

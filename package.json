@@ -32,6 +32,8 @@
     "db:seed": "prisma db seed && npx directus schema apply --yes ./snapshoty.yaml",
     "db:schema-format": "npx prisma format",
     "createSnapshot": "directus schema snapshot --yes ./snapshot.yaml"
+    "startDirectus" : "npx directus start",
+
   },
   "dependencies": {
     "@directus/sdk": "^11.0.3",

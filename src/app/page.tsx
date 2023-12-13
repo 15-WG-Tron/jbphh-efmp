@@ -8,7 +8,6 @@ export default function Home() {
 
   return (
     <div className="w-5/6 mx-auto">
-      <div className="hero min-h-1/2 md:bg-base-200 w-full">
         <div className="hero-content text-center">
           <div className="max-w-3/4 p-12">
             <h1 className="text-5xl font-bold">Hickam Connect</h1>
