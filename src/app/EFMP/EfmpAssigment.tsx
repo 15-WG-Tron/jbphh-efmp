@@ -4,11 +4,11 @@ export const EfmpAssigment = () => {
   return (
     <div>
       <Image
-        src='/EFMP-AssignmentCoordination.jpg'
-        alt='EFMP Assignment Coordination Logo'
+        src="/EFMP-AssignmentCoordination.jpg"
+        alt="EFMP Assignment Coordination Logo"
         width={400}
         height={300}
-        className='mx-auto'
+        className="mx-auto"
       />
     </div>
   );

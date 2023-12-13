@@ -15,7 +15,7 @@ const EfmpMainPage = () => {
 
   return (
     <>
-      <Image className='mx-auto' src={'/EFMP_Air_Force.jpg'} alt={'Air Force EFMP Logo'} width={600} height={500} />
+      <Image className="mx-auto" src={'/EFMP_Air_Force.jpg'} alt={'Air Force EFMP Logo'} width={600} height={500} />
       <div className="hero min-h-1/2 bg-base-200 mt-6 w-11/12 mx-auto hidden md:flex justify-center">
         <div className="hero-content text-center text-neutral">
           <div className="max-w-3/4 p-12">

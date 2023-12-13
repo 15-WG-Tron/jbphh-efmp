@@ -4,7 +4,7 @@ import React from 'react';
 import AppProvider from '../components/AppProvider';
 import { Navbar } from '@/components/Navbar/Navbar';
 import { Footer } from '@/components/Footer';
-import { GeistSans } from 'geist/font'; 
+import { GeistSans } from 'geist/font';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -15,19 +15,20 @@ export const metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   const errorPage = children?.props?.childProp?.segment.includes('not-found');
-  
+
   return (
     <html lang="en" className="bg-base-100 ">
       {errorPage === false ? (
-        <body className={`${GeistSans.className} overflow-y-scroll min-h-screen w-full flex justify-center flex-col mx-auto text-black`}>
-          <main className='mb-8'> 
-          <AppProvider>
-              <Navbar/>
-                {children}
-              
-           </AppProvider>
-         </main>
-         <Footer />
+        <body
+          className={`${GeistSans.className} overflow-y-scroll min-h-screen w-full flex justify-center flex-col mx-auto text-black`}
+        >
+          <main className="mb-8">
+            <AppProvider>
+              <Navbar />
+              {children}
+            </AppProvider>
+          </main>
+          <Footer />
         </body>
       ) : (
         <body>{children}</body>
