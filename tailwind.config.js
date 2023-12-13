@@ -19,16 +19,15 @@ module.exports = {
     themes: [
         {
           mytheme: {
-          "primary": "#57bac1",
-          "secondary": "#b8debd",
-          "accent": "#b7ef73",
-          "neutral": "#23252e",
-          "base-100": "#ffffff",
+          "primary": "#0065B2",
+          "secondary": "#c3d6e4",
+          "accent": "#737268",
+          "neutral": "#376f9A",
+          "base-100": "#fff",
           "info": "#259be4",
           "success": "#22bf9f",
           "warning": "#9d7f06",
-          "error": "#f46052",
-          },
+          "error": "#f46052"          },
         },
       ],
     },

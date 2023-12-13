@@ -1,34 +1,53 @@
 'use client';
 
-import React from 'react';
+import Image from 'next/image';
+import { NavbarLink } from '@/components/Navbar/NavbarLink';
+import { useScroll } from '@/app/hooks/useScroll';
 import Link from 'next/link';
-import Diversity3Icon from '@mui/icons-material/Diversity3';
-import LocalLibraryIcon from '@mui/icons-material/LocalLibrary';
-import SourceIcon from '@mui/icons-material/Source';
-import PhoneIphoneIcon from '@mui/icons-material/PhoneIphone';
-import HandshakeIcon from '@mui/icons-material/Handshake';
-import EventIcon from '@mui/icons-material/Event';
-import HomeIcon from '@mui/icons-material/Home';
-import { NavbarLinks } from './NavbarLinks';
-import { SearchInput } from '../SearchInput';
 
-export const Navbar = ({ children }: { children: React.ReactNode }) => {
-  const sidebarContent = [
-    { title: 'Home', href: '/', Icon: <HomeIcon /> },
-    { title: 'EFMP One Stop', href: '/EFMP', Icon: <Diversity3Icon /> },
-    { title: 'Sponsorship', href: '/Sponsor', Icon: <HandshakeIcon /> },
-    { title: 'Resources', href: '/Resources', Icon: <LocalLibraryIcon /> },
-    { title: 'Services', href: '/Services', Icon: <SourceIcon /> },
-    { title: 'Events', href: '/Events', Icon: <EventIcon /> },
-    { title: 'Contact', href: '/Contacts', Icon: <PhoneIphoneIcon /> },
-  ];
+const menuContent = [
+  { title: 'Home', href: '/' },
+  { title: 'EFMP One Stop', href: '/EFMP' },
+  { title: 'Resources', href: '/Resources' },
+  { title: 'Contact', href: '/Contact' },
+];
+export const Navbar = () => {
+  const { scrollDirection } = useScroll();
+
+  const toggleNavVisibility = (direction: string | null) => {
+    switch (direction) {
+      case 'up':
+        return 'hidden-nav';
+      case 'down':
+        return 'active-nav';
+      default:
+        return '';
+    }
+  };
 
   return (
-    <div>
-      <header className=" py-3 shadow mb-4">
-        <nav className=" w-11/12 border border-blue-600 mx-auto"></nav>
-      </header>
-      {children}
-    </div>
+    <header
+      className={`${toggleNavVisibility(
+        scrollDirection
+      )} bg-primary flex justify-center md:justify-evenly py-4  mb-12 sticky top-0 z-50`}
+    >
+      <a
+        className=" text-bold flex md:flex-row flex-col justify-center items-center normal-case text-xl cursor-pointer"
+        href="/"
+      >
+        <Image src="/img/15th-logo.png" alt="15 WG Logo" height={80} width={80} />
+        <span className="pl-5 w-full items-center md:flex text-white">Hickam Connect</span>
+      </a>
+      <nav className="navbar w-3/4 md:flex md:justify-evenly justify-center hidden ">
+        <NavbarLink menuContent={menuContent} />
+        <Link
+          href={'http://localhost:8055/admin'}
+          className="btn btn-ghost hidden md:flex hover:text-primary text-white border border-white hover:bg-secondary"
+          target="_blank"
+        >
+          Agency Login
+        </Link>
+      </nav>
+    </header>
   );
 };

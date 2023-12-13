@@ -56,7 +56,7 @@ const seedDirectusPermissions = async () => {
 
 const seedDev = async () => {
   await seedRoles();
-  await createUser(coreyAdmin)
+  await createUser(coreyAdmin);
   await seedOrganization();
   await seedDirectusUsers();
   await seedDirectusPermissions();

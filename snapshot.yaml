@@ -29,6 +29,75 @@ collections:
       unarchive_value: draft
     schema:
       name: checklist
+  - collection: contact
+    meta:
+      accountability: all
+      archive_app_filter: true
+      archive_field: status
+      archive_value: archived
+      collapse: open
+      collection: contact
+      color: null
+      display_template: null
+      group: null
+      hidden: false
+      icon: null
+      item_duplication_fields: null
+      note: null
+      preview_url: null
+      singleton: false
+      sort: null
+      sort_field: null
+      translations: null
+      unarchive_value: draft
+    schema:
+      name: contact
+  - collection: faq
+    meta:
+      accountability: all
+      archive_app_filter: true
+      archive_field: status
+      archive_value: archived
+      collapse: open
+      collection: faq
+      color: null
+      display_template: null
+      group: null
+      hidden: false
+      icon: null
+      item_duplication_fields: null
+      note: null
+      preview_url: null
+      singleton: false
+      sort: null
+      sort_field: null
+      translations: null
+      unarchive_value: draft
+    schema:
+      name: faq
+  - collection: homepage_cards
+    meta:
+      accountability: all
+      archive_app_filter: true
+      archive_field: status
+      archive_value: archived
+      collapse: open
+      collection: homepage_cards
+      color: null
+      display_template: null
+      group: null
+      hidden: false
+      icon: null
+      item_duplication_fields: null
+      note: null
+      preview_url: null
+      singleton: false
+      sort: null
+      sort_field: null
+      translations: null
+      unarchive_value: draft
+    schema:
+      name: homepage_cards
   - collection: landingPage
     meta:
       accountability: all
@@ -52,6 +121,10 @@ collections:
       unarchive_value: draft
     schema:
       name: landingPage
+  - collection: navbar
+    meta: null
+    schema:
+      name: navbar
   - collection: organization
     meta:
       accountability: all
@@ -75,6 +148,29 @@ collections:
       unarchive_value: draft
     schema:
       name: organization
+  - collection: resources
+    meta:
+      accountability: all
+      archive_app_filter: true
+      archive_field: status
+      archive_value: archived
+      collapse: open
+      collection: resources
+      color: null
+      display_template: null
+      group: null
+      hidden: false
+      icon: null
+      item_duplication_fields: null
+      note: null
+      preview_url: null
+      singleton: false
+      sort: null
+      sort_field: null
+      translations: null
+      unarchive_value: draft
+    schema:
+      name: resources
 fields:
   - collection: _prisma_migrations
     field: applied_steps_count
@@ -571,6 +667,532 @@ fields:
       has_auto_increment: false
       foreign_key_table: directus_users
       foreign_key_column: id
+  - collection: contact
+    field: altPhoneNumber
+    type: string
+    meta:
+      collection: contact
+      conditions: null
+      display: null
+      display_options: null
+      field: altPhoneNumber
+      group: null
+      hidden: false
+      interface: input
+      note: null
+      options: null
+      readonly: false
+      required: false
+      sort: 6
+      special: null
+      translations: null
+      validation: null
+      validation_message: null
+      width: half
+    schema:
+      name: altPhoneNumber
+      table: contact
+      data_type: character varying
+      default_value: null
+      max_length: 255
+      numeric_precision: null
+      numeric_scale: null
+      is_nullable: true
+      is_unique: false
+      is_primary_key: false
+      is_generated: false
+      generation_expression: null
+      has_auto_increment: false
+      foreign_key_table: null
+      foreign_key_column: null
+  - collection: contact
+    field: date_created
+    type: timestamp
+    meta:
+      collection: contact
+      conditions: null
+      display: datetime
+      display_options:
+        relative: true
+      field: date_created
+      group: null
+      hidden: true
+      interface: datetime
+      note: null
+      options: null
+      readonly: true
+      required: false
+      sort: 11
+      special:
+        - date-created
+      translations: null
+      validation: null
+      validation_message: null
+      width: half
+    schema:
+      name: date_created
+      table: contact
+      data_type: timestamp with time zone
+      default_value: null
+      max_length: null
+      numeric_precision: null
+      numeric_scale: null
+      is_nullable: true
+      is_unique: false
+      is_primary_key: false
+      is_generated: false
+      generation_expression: null
+      has_auto_increment: false
+      foreign_key_table: null
+      foreign_key_column: null
+  - collection: contact
+    field: date_updated
+    type: timestamp
+    meta:
+      collection: contact
+      conditions: null
+      display: datetime
+      display_options:
+        relative: true
+      field: date_updated
+      group: null
+      hidden: true
+      interface: datetime
+      note: null
+      options: null
+      readonly: true
+      required: false
+      sort: 13
+      special:
+        - date-updated
+      translations: null
+      validation: null
+      validation_message: null
+      width: half
+    schema:
+      name: date_updated
+      table: contact
+      data_type: timestamp with time zone
+      default_value: null
+      max_length: null
+      numeric_precision: null
+      numeric_scale: null
+      is_nullable: true
+      is_unique: false
+      is_primary_key: false
+      is_generated: false
+      generation_expression: null
+      has_auto_increment: false
+      foreign_key_table: null
+      foreign_key_column: null
+  - collection: contact
+    field: emailAddress
+    type: string
+    meta:
+      collection: contact
+      conditions: null
+      display: null
+      display_options: null
+      field: emailAddress
+      group: null
+      hidden: false
+      interface: input
+      note: null
+      options: null
+      readonly: false
+      required: false
+      sort: 8
+      special: null
+      translations: null
+      validation: null
+      validation_message: null
+      width: half
+    schema:
+      name: emailAddress
+      table: contact
+      data_type: character varying
+      default_value: null
+      max_length: 255
+      numeric_precision: null
+      numeric_scale: null
+      is_nullable: true
+      is_unique: false
+      is_primary_key: false
+      is_generated: false
+      generation_expression: null
+      has_auto_increment: false
+      foreign_key_table: null
+      foreign_key_column: null
+  - collection: contact
+    field: id
+    type: integer
+    meta:
+      collection: contact
+      conditions: null
+      display: null
+      display_options: null
+      field: id
+      group: null
+      hidden: true
+      interface: input
+      note: null
+      options: null
+      readonly: true
+      required: false
+      sort: 1
+      special: null
+      translations: null
+      validation: null
+      validation_message: null
+      width: full
+    schema:
+      name: id
+      table: contact
+      data_type: integer
+      default_value: nextval('contact_id_seq'::regclass)
+      max_length: null
+      numeric_precision: 32
+      numeric_scale: 0
+      is_nullable: false
+      is_unique: true
+      is_primary_key: true
+      is_generated: false
+      generation_expression: null
+      has_auto_increment: true
+      foreign_key_table: null
+      foreign_key_column: null
+  - collection: contact
+    field: jobTitle
+    type: string
+    meta:
+      collection: contact
+      conditions: null
+      display: null
+      display_options: null
+      field: jobTitle
+      group: null
+      hidden: false
+      interface: input
+      note: null
+      options: null
+      readonly: false
+      required: false
+      sort: 4
+      special: null
+      translations: null
+      validation: null
+      validation_message: null
+      width: half
+    schema:
+      name: jobTitle
+      table: contact
+      data_type: character varying
+      default_value: null
+      max_length: 255
+      numeric_precision: null
+      numeric_scale: null
+      is_nullable: true
+      is_unique: false
+      is_primary_key: false
+      is_generated: false
+      generation_expression: null
+      has_auto_increment: false
+      foreign_key_table: null
+      foreign_key_column: null
+  - collection: contact
+    field: location
+    type: string
+    meta:
+      collection: contact
+      conditions: null
+      display: null
+      display_options: null
+      field: location
+      group: null
+      hidden: false
+      interface: input
+      note: null
+      options: null
+      readonly: false
+      required: false
+      sort: 7
+      special: null
+      translations: null
+      validation: null
+      validation_message: null
+      width: half
+    schema:
+      name: location
+      table: contact
+      data_type: character varying
+      default_value: null
+      max_length: 255
+      numeric_precision: null
+      numeric_scale: null
+      is_nullable: true
+      is_unique: false
+      is_primary_key: false
+      is_generated: false
+      generation_expression: null
+      has_auto_increment: false
+      foreign_key_table: null
+      foreign_key_column: null
+  - collection: contact
+    field: name
+    type: string
+    meta:
+      collection: contact
+      conditions: null
+      display: null
+      display_options: null
+      field: name
+      group: null
+      hidden: false
+      interface: input
+      note: null
+      options: null
+      readonly: false
+      required: false
+      sort: 3
+      special: null
+      translations: null
+      validation: null
+      validation_message: null
+      width: half
+    schema:
+      name: name
+      table: contact
+      data_type: character varying
+      default_value: null
+      max_length: 255
+      numeric_precision: null
+      numeric_scale: null
+      is_nullable: true
+      is_unique: false
+      is_primary_key: false
+      is_generated: false
+      generation_expression: null
+      has_auto_increment: false
+      foreign_key_table: null
+      foreign_key_column: null
+  - collection: contact
+    field: organization
+    type: integer
+    meta:
+      collection: contact
+      conditions: null
+      display: related-values
+      display_options:
+        template: '{{name}}'
+      field: organization
+      group: null
+      hidden: false
+      interface: select-dropdown-m2o
+      note: null
+      options:
+        template: "{{id}} -\_{{name}}"
+      readonly: false
+      required: false
+      sort: 9
+      special:
+        - m2o
+      translations: null
+      validation: null
+      validation_message: null
+      width: half
+    schema:
+      name: organization
+      table: contact
+      data_type: integer
+      default_value: null
+      max_length: null
+      numeric_precision: 32
+      numeric_scale: 0
+      is_nullable: true
+      is_unique: false
+      is_primary_key: false
+      is_generated: false
+      generation_expression: null
+      has_auto_increment: false
+      foreign_key_table: organization
+      foreign_key_column: id
+  - collection: contact
+    field: phoneNumber
+    type: string
+    meta:
+      collection: contact
+      conditions: null
+      display: null
+      display_options: null
+      field: phoneNumber
+      group: null
+      hidden: false
+      interface: input
+      note: null
+      options: null
+      readonly: false
+      required: false
+      sort: 5
+      special: null
+      translations: null
+      validation: null
+      validation_message: null
+      width: half
+    schema:
+      name: phoneNumber
+      table: contact
+      data_type: character varying
+      default_value: null
+      max_length: 255
+      numeric_precision: null
+      numeric_scale: null
+      is_nullable: true
+      is_unique: false
+      is_primary_key: false
+      is_generated: false
+      generation_expression: null
+      has_auto_increment: false
+      foreign_key_table: null
+      foreign_key_column: null
+  - collection: contact
+    field: status
+    type: string
+    meta:
+      collection: contact
+      conditions: null
+      display: labels
+      display_options:
+        choices:
+          - text: $t:published
+            value: published
+            foreground: '#FFFFFF'
+            background: var(--primary)
+          - text: $t:draft
+            value: draft
+            foreground: '#18222F'
+            background: '#D3DAE4'
+          - text: $t:archived
+            value: archived
+            foreground: '#FFFFFF'
+            background: var(--warning)
+        showAsDot: true
+      field: status
+      group: null
+      hidden: false
+      interface: select-dropdown
+      note: null
+      options:
+        choices:
+          - text: $t:published
+            value: published
+          - text: $t:draft
+            value: draft
+          - text: $t:archived
+            value: archived
+      readonly: false
+      required: false
+      sort: 2
+      special: null
+      translations: null
+      validation: null
+      validation_message: null
+      width: full
+    schema:
+      name: status
+      table: contact
+      data_type: character varying
+      default_value: draft
+      max_length: 255
+      numeric_precision: null
+      numeric_scale: null
+      is_nullable: false
+      is_unique: false
+      is_primary_key: false
+      is_generated: false
+      generation_expression: null
+      has_auto_increment: false
+      foreign_key_table: null
+      foreign_key_column: null
+  - collection: contact
+    field: user_created
+    type: uuid
+    meta:
+      collection: contact
+      conditions: null
+      display: user
+      display_options: null
+      field: user_created
+      group: null
+      hidden: true
+      interface: select-dropdown-m2o
+      note: null
+      options:
+        template: '{{avatar.$thumbnail}} {{first_name}} {{last_name}}'
+      readonly: true
+      required: false
+      sort: 10
+      special:
+        - user-created
+      translations: null
+      validation: null
+      validation_message: null
+      width: half
+    schema:
+      name: user_created
+      table: contact
+      data_type: uuid
+      default_value: null
+      max_length: null
+      numeric_precision: null
+      numeric_scale: null
+      is_nullable: true
+      is_unique: false
+      is_primary_key: false
+      is_generated: false
+      generation_expression: null
+      has_auto_increment: false
+      foreign_key_table: directus_users
+      foreign_key_column: id
+  - collection: contact
+    field: user_updated
+    type: uuid
+    meta:
+      collection: contact
+      conditions: null
+      display: user
+      display_options: null
+      field: user_updated
+      group: null
+      hidden: true
+      interface: select-dropdown-m2o
+      note: null
+      options:
+        template: '{{avatar.$thumbnail}} {{first_name}} {{last_name}}'
+      readonly: true
+      required: false
+      sort: 12
+      special:
+        - user-updated
+      translations: null
+      validation: null
+      validation_message: null
+      width: half
+    schema:
+      name: user_updated
+      table: contact
+      data_type: uuid
+      default_value: null
+      max_length: null
+      numeric_precision: null
+      numeric_scale: null
+      is_nullable: true
+      is_unique: false
+      is_primary_key: false
+      is_generated: false
+      generation_expression: null
+      has_auto_increment: false
+      foreign_key_table: directus_users
+      foreign_key_column: id
   - collection: directus_users
     field: organization
     type: integer
@@ -610,6 +1232,749 @@ fields:
       generation_expression: null
       has_auto_increment: false
       foreign_key_table: organization
+      foreign_key_column: id
+  - collection: faq
+    field: answer
+    type: text
+    meta:
+      collection: faq
+      conditions: null
+      display: null
+      display_options: null
+      field: answer
+      group: null
+      hidden: false
+      interface: input-rich-text-html
+      note: null
+      options: null
+      readonly: false
+      required: false
+      sort: 8
+      special: null
+      translations: null
+      validation: null
+      validation_message: null
+      width: full
+    schema:
+      name: answer
+      table: faq
+      data_type: text
+      default_value: null
+      max_length: null
+      numeric_precision: null
+      numeric_scale: null
+      is_nullable: true
+      is_unique: false
+      is_primary_key: false
+      is_generated: false
+      generation_expression: null
+      has_auto_increment: false
+      foreign_key_table: null
+      foreign_key_column: null
+  - collection: faq
+    field: date_created
+    type: timestamp
+    meta:
+      collection: faq
+      conditions: null
+      display: datetime
+      display_options:
+        relative: true
+      field: date_created
+      group: null
+      hidden: true
+      interface: datetime
+      note: null
+      options: null
+      readonly: true
+      required: false
+      sort: 4
+      special:
+        - date-created
+      translations: null
+      validation: null
+      validation_message: null
+      width: half
+    schema:
+      name: date_created
+      table: faq
+      data_type: timestamp with time zone
+      default_value: null
+      max_length: null
+      numeric_precision: null
+      numeric_scale: null
+      is_nullable: true
+      is_unique: false
+      is_primary_key: false
+      is_generated: false
+      generation_expression: null
+      has_auto_increment: false
+      foreign_key_table: null
+      foreign_key_column: null
+  - collection: faq
+    field: date_updated
+    type: timestamp
+    meta:
+      collection: faq
+      conditions: null
+      display: datetime
+      display_options:
+        relative: true
+      field: date_updated
+      group: null
+      hidden: true
+      interface: datetime
+      note: null
+      options: null
+      readonly: true
+      required: false
+      sort: 6
+      special:
+        - date-updated
+      translations: null
+      validation: null
+      validation_message: null
+      width: half
+    schema:
+      name: date_updated
+      table: faq
+      data_type: timestamp with time zone
+      default_value: null
+      max_length: null
+      numeric_precision: null
+      numeric_scale: null
+      is_nullable: true
+      is_unique: false
+      is_primary_key: false
+      is_generated: false
+      generation_expression: null
+      has_auto_increment: false
+      foreign_key_table: null
+      foreign_key_column: null
+  - collection: faq
+    field: id
+    type: integer
+    meta:
+      collection: faq
+      conditions: null
+      display: null
+      display_options: null
+      field: id
+      group: null
+      hidden: true
+      interface: input
+      note: null
+      options: null
+      readonly: true
+      required: false
+      sort: 1
+      special: null
+      translations: null
+      validation: null
+      validation_message: null
+      width: full
+    schema:
+      name: id
+      table: faq
+      data_type: integer
+      default_value: nextval('faq_id_seq'::regclass)
+      max_length: null
+      numeric_precision: 32
+      numeric_scale: 0
+      is_nullable: false
+      is_unique: true
+      is_primary_key: true
+      is_generated: false
+      generation_expression: null
+      has_auto_increment: true
+      foreign_key_table: null
+      foreign_key_column: null
+  - collection: faq
+    field: orgId
+    type: integer
+    meta:
+      collection: faq
+      conditions: null
+      display: null
+      display_options: null
+      field: orgId
+      group: null
+      hidden: false
+      interface: select-dropdown-m2o
+      note: null
+      options: null
+      readonly: false
+      required: false
+      sort: 9
+      special:
+        - m2o
+      translations: null
+      validation: null
+      validation_message: null
+      width: full
+    schema:
+      name: orgId
+      table: faq
+      data_type: integer
+      default_value: null
+      max_length: null
+      numeric_precision: 32
+      numeric_scale: 0
+      is_nullable: true
+      is_unique: false
+      is_primary_key: false
+      is_generated: false
+      generation_expression: null
+      has_auto_increment: false
+      foreign_key_table: organization
+      foreign_key_column: id
+  - collection: faq
+    field: question
+    type: string
+    meta:
+      collection: faq
+      conditions: null
+      display: null
+      display_options: null
+      field: question
+      group: null
+      hidden: false
+      interface: input
+      note: null
+      options: null
+      readonly: false
+      required: false
+      sort: 7
+      special: null
+      translations: null
+      validation: null
+      validation_message: null
+      width: full
+    schema:
+      name: question
+      table: faq
+      data_type: character varying
+      default_value: null
+      max_length: 255
+      numeric_precision: null
+      numeric_scale: null
+      is_nullable: true
+      is_unique: false
+      is_primary_key: false
+      is_generated: false
+      generation_expression: null
+      has_auto_increment: false
+      foreign_key_table: null
+      foreign_key_column: null
+  - collection: faq
+    field: status
+    type: string
+    meta:
+      collection: faq
+      conditions: null
+      display: labels
+      display_options:
+        choices:
+          - text: $t:published
+            value: published
+            foreground: '#FFFFFF'
+            background: var(--primary)
+          - text: $t:draft
+            value: draft
+            foreground: '#18222F'
+            background: '#D3DAE4'
+          - text: $t:archived
+            value: archived
+            foreground: '#FFFFFF'
+            background: var(--warning)
+        showAsDot: true
+      field: status
+      group: null
+      hidden: false
+      interface: select-dropdown
+      note: null
+      options:
+        choices:
+          - text: $t:published
+            value: published
+          - text: $t:draft
+            value: draft
+          - text: $t:archived
+            value: archived
+      readonly: false
+      required: false
+      sort: 2
+      special: null
+      translations: null
+      validation: null
+      validation_message: null
+      width: full
+    schema:
+      name: status
+      table: faq
+      data_type: character varying
+      default_value: draft
+      max_length: 255
+      numeric_precision: null
+      numeric_scale: null
+      is_nullable: false
+      is_unique: false
+      is_primary_key: false
+      is_generated: false
+      generation_expression: null
+      has_auto_increment: false
+      foreign_key_table: null
+      foreign_key_column: null
+  - collection: faq
+    field: user_created
+    type: uuid
+    meta:
+      collection: faq
+      conditions: null
+      display: user
+      display_options: null
+      field: user_created
+      group: null
+      hidden: true
+      interface: select-dropdown-m2o
+      note: null
+      options:
+        template: '{{avatar.$thumbnail}} {{first_name}} {{last_name}}'
+      readonly: true
+      required: false
+      sort: 3
+      special:
+        - user-created
+      translations: null
+      validation: null
+      validation_message: null
+      width: half
+    schema:
+      name: user_created
+      table: faq
+      data_type: uuid
+      default_value: null
+      max_length: null
+      numeric_precision: null
+      numeric_scale: null
+      is_nullable: true
+      is_unique: false
+      is_primary_key: false
+      is_generated: false
+      generation_expression: null
+      has_auto_increment: false
+      foreign_key_table: directus_users
+      foreign_key_column: id
+  - collection: faq
+    field: user_updated
+    type: uuid
+    meta:
+      collection: faq
+      conditions: null
+      display: user
+      display_options: null
+      field: user_updated
+      group: null
+      hidden: true
+      interface: select-dropdown-m2o
+      note: null
+      options:
+        template: '{{avatar.$thumbnail}} {{first_name}} {{last_name}}'
+      readonly: true
+      required: false
+      sort: 5
+      special:
+        - user-updated
+      translations: null
+      validation: null
+      validation_message: null
+      width: half
+    schema:
+      name: user_updated
+      table: faq
+      data_type: uuid
+      default_value: null
+      max_length: null
+      numeric_precision: null
+      numeric_scale: null
+      is_nullable: true
+      is_unique: false
+      is_primary_key: false
+      is_generated: false
+      generation_expression: null
+      has_auto_increment: false
+      foreign_key_table: directus_users
+      foreign_key_column: id
+  - collection: homepage_cards
+    field: date_created
+    type: timestamp
+    meta:
+      collection: homepage_cards
+      conditions: null
+      display: datetime
+      display_options:
+        relative: true
+      field: date_created
+      group: null
+      hidden: true
+      interface: datetime
+      note: null
+      options: null
+      readonly: true
+      required: false
+      sort: 4
+      special:
+        - date-created
+      translations: null
+      validation: null
+      validation_message: null
+      width: half
+    schema:
+      name: date_created
+      table: homepage_cards
+      data_type: timestamp with time zone
+      default_value: null
+      max_length: null
+      numeric_precision: null
+      numeric_scale: null
+      is_nullable: true
+      is_unique: false
+      is_primary_key: false
+      is_generated: false
+      generation_expression: null
+      has_auto_increment: false
+      foreign_key_table: null
+      foreign_key_column: null
+  - collection: homepage_cards
+    field: date_updated
+    type: timestamp
+    meta:
+      collection: homepage_cards
+      conditions: null
+      display: datetime
+      display_options:
+        relative: true
+      field: date_updated
+      group: null
+      hidden: true
+      interface: datetime
+      note: null
+      options: null
+      readonly: true
+      required: false
+      sort: 6
+      special:
+        - date-updated
+      translations: null
+      validation: null
+      validation_message: null
+      width: half
+    schema:
+      name: date_updated
+      table: homepage_cards
+      data_type: timestamp with time zone
+      default_value: null
+      max_length: null
+      numeric_precision: null
+      numeric_scale: null
+      is_nullable: true
+      is_unique: false
+      is_primary_key: false
+      is_generated: false
+      generation_expression: null
+      has_auto_increment: false
+      foreign_key_table: null
+      foreign_key_column: null
+  - collection: homepage_cards
+    field: description
+    type: string
+    meta:
+      collection: homepage_cards
+      conditions: null
+      display: null
+      display_options: null
+      field: description
+      group: null
+      hidden: false
+      interface: input
+      note: null
+      options: null
+      readonly: false
+      required: false
+      sort: 8
+      special: null
+      translations: null
+      validation: null
+      validation_message: null
+      width: full
+    schema:
+      name: description
+      table: homepage_cards
+      data_type: character varying
+      default_value: null
+      max_length: 255
+      numeric_precision: null
+      numeric_scale: null
+      is_nullable: true
+      is_unique: false
+      is_primary_key: false
+      is_generated: false
+      generation_expression: null
+      has_auto_increment: false
+      foreign_key_table: null
+      foreign_key_column: null
+  - collection: homepage_cards
+    field: id
+    type: integer
+    meta:
+      collection: homepage_cards
+      conditions: null
+      display: null
+      display_options: null
+      field: id
+      group: null
+      hidden: true
+      interface: input
+      note: null
+      options: null
+      readonly: true
+      required: false
+      sort: 1
+      special: null
+      translations: null
+      validation: null
+      validation_message: null
+      width: full
+    schema:
+      name: id
+      table: homepage_cards
+      data_type: integer
+      default_value: nextval('homepage_cards_id_seq'::regclass)
+      max_length: null
+      numeric_precision: 32
+      numeric_scale: 0
+      is_nullable: false
+      is_unique: true
+      is_primary_key: true
+      is_generated: false
+      generation_expression: null
+      has_auto_increment: true
+      foreign_key_table: null
+      foreign_key_column: null
+  - collection: homepage_cards
+    field: link
+    type: string
+    meta:
+      collection: homepage_cards
+      conditions: null
+      display: null
+      display_options: null
+      field: link
+      group: null
+      hidden: false
+      interface: input
+      note: null
+      options: null
+      readonly: false
+      required: false
+      sort: 10
+      special: null
+      translations: null
+      validation: null
+      validation_message: null
+      width: full
+    schema:
+      name: link
+      table: homepage_cards
+      data_type: character varying
+      default_value: null
+      max_length: 255
+      numeric_precision: null
+      numeric_scale: null
+      is_nullable: true
+      is_unique: false
+      is_primary_key: false
+      is_generated: false
+      generation_expression: null
+      has_auto_increment: false
+      foreign_key_table: null
+      foreign_key_column: null
+  - collection: homepage_cards
+    field: status
+    type: string
+    meta:
+      collection: homepage_cards
+      conditions: null
+      display: labels
+      display_options:
+        choices:
+          - text: $t:published
+            value: published
+            foreground: '#FFFFFF'
+            background: var(--primary)
+          - text: $t:draft
+            value: draft
+            foreground: '#18222F'
+            background: '#D3DAE4'
+          - text: $t:archived
+            value: archived
+            foreground: '#FFFFFF'
+            background: var(--warning)
+        showAsDot: true
+      field: status
+      group: null
+      hidden: false
+      interface: select-dropdown
+      note: null
+      options:
+        choices:
+          - text: $t:published
+            value: published
+          - text: $t:draft
+            value: draft
+          - text: $t:archived
+            value: archived
+      readonly: false
+      required: false
+      sort: 2
+      special: null
+      translations: null
+      validation: null
+      validation_message: null
+      width: full
+    schema:
+      name: status
+      table: homepage_cards
+      data_type: character varying
+      default_value: draft
+      max_length: 255
+      numeric_precision: null
+      numeric_scale: null
+      is_nullable: false
+      is_unique: false
+      is_primary_key: false
+      is_generated: false
+      generation_expression: null
+      has_auto_increment: false
+      foreign_key_table: null
+      foreign_key_column: null
+  - collection: homepage_cards
+    field: title
+    type: string
+    meta:
+      collection: homepage_cards
+      conditions: null
+      display: null
+      display_options: null
+      field: title
+      group: null
+      hidden: false
+      interface: input
+      note: null
+      options: null
+      readonly: false
+      required: false
+      sort: 7
+      special: null
+      translations: null
+      validation: null
+      validation_message: null
+      width: full
+    schema:
+      name: title
+      table: homepage_cards
+      data_type: character varying
+      default_value: null
+      max_length: 255
+      numeric_precision: null
+      numeric_scale: null
+      is_nullable: true
+      is_unique: false
+      is_primary_key: false
+      is_generated: false
+      generation_expression: null
+      has_auto_increment: false
+      foreign_key_table: null
+      foreign_key_column: null
+  - collection: homepage_cards
+    field: user_created
+    type: uuid
+    meta:
+      collection: homepage_cards
+      conditions: null
+      display: user
+      display_options: null
+      field: user_created
+      group: null
+      hidden: true
+      interface: select-dropdown-m2o
+      note: null
+      options:
+        template: '{{avatar.$thumbnail}} {{first_name}} {{last_name}}'
+      readonly: true
+      required: false
+      sort: 3
+      special:
+        - user-created
+      translations: null
+      validation: null
+      validation_message: null
+      width: half
+    schema:
+      name: user_created
+      table: homepage_cards
+      data_type: uuid
+      default_value: null
+      max_length: null
+      numeric_precision: null
+      numeric_scale: null
+      is_nullable: true
+      is_unique: false
+      is_primary_key: false
+      is_generated: false
+      generation_expression: null
+      has_auto_increment: false
+      foreign_key_table: directus_users
+      foreign_key_column: id
+  - collection: homepage_cards
+    field: user_updated
+    type: uuid
+    meta:
+      collection: homepage_cards
+      conditions: null
+      display: user
+      display_options: null
+      field: user_updated
+      group: null
+      hidden: true
+      interface: select-dropdown-m2o
+      note: null
+      options:
+        template: '{{avatar.$thumbnail}} {{first_name}} {{last_name}}'
+      readonly: true
+      required: false
+      sort: 5
+      special:
+        - user-updated
+      translations: null
+      validation: null
+      validation_message: null
+      width: half
+    schema:
+      name: user_updated
+      table: homepage_cards
+      data_type: uuid
+      default_value: null
+      max_length: null
+      numeric_precision: null
+      numeric_scale: null
+      is_nullable: true
+      is_unique: false
+      is_primary_key: false
+      is_generated: false
+      generation_expression: null
+      has_auto_increment: false
+      foreign_key_table: directus_users
       foreign_key_column: id
   - collection: landingPage
     field: Title
@@ -1072,6 +2437,146 @@ fields:
       has_auto_increment: false
       foreign_key_table: directus_users
       foreign_key_column: id
+  - collection: navbar
+    field: date_created
+    type: timestamp
+    meta: null
+    schema:
+      name: date_created
+      table: navbar
+      data_type: timestamp with time zone
+      default_value: null
+      max_length: null
+      numeric_precision: null
+      numeric_scale: null
+      is_nullable: true
+      is_unique: false
+      is_primary_key: false
+      is_generated: false
+      generation_expression: null
+      has_auto_increment: false
+      foreign_key_table: null
+      foreign_key_column: null
+  - collection: navbar
+    field: date_updated
+    type: timestamp
+    meta: null
+    schema:
+      name: date_updated
+      table: navbar
+      data_type: timestamp with time zone
+      default_value: null
+      max_length: null
+      numeric_precision: null
+      numeric_scale: null
+      is_nullable: true
+      is_unique: false
+      is_primary_key: false
+      is_generated: false
+      generation_expression: null
+      has_auto_increment: false
+      foreign_key_table: null
+      foreign_key_column: null
+  - collection: navbar
+    field: id
+    type: integer
+    meta: null
+    schema:
+      name: id
+      table: navbar
+      data_type: integer
+      default_value: nextval('navbar_id_seq'::regclass)
+      max_length: null
+      numeric_precision: 32
+      numeric_scale: 0
+      is_nullable: false
+      is_unique: true
+      is_primary_key: true
+      is_generated: false
+      generation_expression: null
+      has_auto_increment: true
+      foreign_key_table: null
+      foreign_key_column: null
+  - collection: navbar
+    field: name
+    type: string
+    meta: null
+    schema:
+      name: name
+      table: navbar
+      data_type: character varying
+      default_value: null
+      max_length: 255
+      numeric_precision: null
+      numeric_scale: null
+      is_nullable: true
+      is_unique: false
+      is_primary_key: false
+      is_generated: false
+      generation_expression: null
+      has_auto_increment: false
+      foreign_key_table: null
+      foreign_key_column: null
+  - collection: navbar
+    field: status
+    type: string
+    meta: null
+    schema:
+      name: status
+      table: navbar
+      data_type: character varying
+      default_value: draft
+      max_length: 255
+      numeric_precision: null
+      numeric_scale: null
+      is_nullable: false
+      is_unique: false
+      is_primary_key: false
+      is_generated: false
+      generation_expression: null
+      has_auto_increment: false
+      foreign_key_table: null
+      foreign_key_column: null
+  - collection: navbar
+    field: user_created
+    type: uuid
+    meta: null
+    schema:
+      name: user_created
+      table: navbar
+      data_type: uuid
+      default_value: null
+      max_length: null
+      numeric_precision: null
+      numeric_scale: null
+      is_nullable: true
+      is_unique: false
+      is_primary_key: false
+      is_generated: false
+      generation_expression: null
+      has_auto_increment: false
+      foreign_key_table: directus_users
+      foreign_key_column: id
+  - collection: navbar
+    field: user_updated
+    type: uuid
+    meta: null
+    schema:
+      name: user_updated
+      table: navbar
+      data_type: uuid
+      default_value: null
+      max_length: null
+      numeric_precision: null
+      numeric_scale: null
+      is_nullable: true
+      is_unique: false
+      is_primary_key: false
+      is_generated: false
+      generation_expression: null
+      has_auto_increment: false
+      foreign_key_table: directus_users
+      foreign_key_column: id
   - collection: organization
     field: checklist
     type: alias
@@ -1089,6 +2594,29 @@ fields:
       readonly: false
       required: false
       sort: 10
+      special:
+        - o2m
+      translations: null
+      validation: null
+      validation_message: null
+      width: full
+  - collection: organization
+    field: contact
+    type: alias
+    meta:
+      collection: organization
+      conditions: null
+      display: null
+      display_options: null
+      field: contact
+      group: null
+      hidden: false
+      interface: list-o2m
+      note: null
+      options: null
+      readonly: false
+      required: false
+      sort: 11
       special:
         - o2m
       translations: null
@@ -1175,6 +2703,29 @@ fields:
       has_auto_increment: false
       foreign_key_table: null
       foreign_key_column: null
+  - collection: organization
+    field: faq
+    type: alias
+    meta:
+      collection: organization
+      conditions: null
+      display: null
+      display_options: null
+      field: faq
+      group: null
+      hidden: false
+      interface: list-o2m
+      note: null
+      options: null
+      readonly: false
+      required: false
+      sort: 12
+      special:
+        - o2m
+      translations: null
+      validation: null
+      validation_message: null
+      width: full
   - collection: organization
     field: id
     type: integer
@@ -1452,6 +3003,416 @@ fields:
       validation: null
       validation_message: null
       width: full
+  - collection: resources
+    field: date_created
+    type: timestamp
+    meta:
+      collection: resources
+      conditions: null
+      display: datetime
+      display_options:
+        relative: true
+      field: date_created
+      group: null
+      hidden: true
+      interface: datetime
+      note: null
+      options: null
+      readonly: true
+      required: false
+      sort: 4
+      special:
+        - date-created
+      translations: null
+      validation: null
+      validation_message: null
+      width: half
+    schema:
+      name: date_created
+      table: resources
+      data_type: timestamp with time zone
+      default_value: null
+      max_length: null
+      numeric_precision: null
+      numeric_scale: null
+      is_nullable: true
+      is_unique: false
+      is_primary_key: false
+      is_generated: false
+      generation_expression: null
+      has_auto_increment: false
+      foreign_key_table: null
+      foreign_key_column: null
+  - collection: resources
+    field: date_updated
+    type: timestamp
+    meta:
+      collection: resources
+      conditions: null
+      display: datetime
+      display_options:
+        relative: true
+      field: date_updated
+      group: null
+      hidden: true
+      interface: datetime
+      note: null
+      options: null
+      readonly: true
+      required: false
+      sort: 6
+      special:
+        - date-updated
+      translations: null
+      validation: null
+      validation_message: null
+      width: half
+    schema:
+      name: date_updated
+      table: resources
+      data_type: timestamp with time zone
+      default_value: null
+      max_length: null
+      numeric_precision: null
+      numeric_scale: null
+      is_nullable: true
+      is_unique: false
+      is_primary_key: false
+      is_generated: false
+      generation_expression: null
+      has_auto_increment: false
+      foreign_key_table: null
+      foreign_key_column: null
+  - collection: resources
+    field: description
+    type: string
+    meta:
+      collection: resources
+      conditions: null
+      display: null
+      display_options: null
+      field: description
+      group: null
+      hidden: false
+      interface: input
+      note: null
+      options: null
+      readonly: false
+      required: false
+      sort: 10
+      special: null
+      translations: null
+      validation: null
+      validation_message: null
+      width: full
+    schema:
+      name: description
+      table: resources
+      data_type: character varying
+      default_value: null
+      max_length: 255
+      numeric_precision: null
+      numeric_scale: null
+      is_nullable: true
+      is_unique: false
+      is_primary_key: false
+      is_generated: false
+      generation_expression: null
+      has_auto_increment: false
+      foreign_key_table: null
+      foreign_key_column: null
+  - collection: resources
+    field: id
+    type: integer
+    meta:
+      collection: resources
+      conditions: null
+      display: null
+      display_options: null
+      field: id
+      group: null
+      hidden: true
+      interface: input
+      note: null
+      options: null
+      readonly: true
+      required: false
+      sort: 1
+      special: null
+      translations: null
+      validation: null
+      validation_message: null
+      width: full
+    schema:
+      name: id
+      table: resources
+      data_type: integer
+      default_value: nextval('resources_id_seq'::regclass)
+      max_length: null
+      numeric_precision: 32
+      numeric_scale: 0
+      is_nullable: false
+      is_unique: true
+      is_primary_key: true
+      is_generated: false
+      generation_expression: null
+      has_auto_increment: true
+      foreign_key_table: null
+      foreign_key_column: null
+  - collection: resources
+    field: image
+    type: uuid
+    meta:
+      collection: resources
+      conditions: null
+      display: null
+      display_options: null
+      field: image
+      group: null
+      hidden: false
+      interface: file-image
+      note: null
+      options: null
+      readonly: false
+      required: false
+      sort: 9
+      special:
+        - file
+      translations: null
+      validation: null
+      validation_message: null
+      width: full
+    schema:
+      name: image
+      table: resources
+      data_type: uuid
+      default_value: null
+      max_length: null
+      numeric_precision: null
+      numeric_scale: null
+      is_nullable: true
+      is_unique: false
+      is_primary_key: false
+      is_generated: false
+      generation_expression: null
+      has_auto_increment: false
+      foreign_key_table: directus_files
+      foreign_key_column: id
+  - collection: resources
+    field: link
+    type: string
+    meta:
+      collection: resources
+      conditions: null
+      display: null
+      display_options: null
+      field: link
+      group: null
+      hidden: false
+      interface: input
+      note: null
+      options: null
+      readonly: false
+      required: false
+      sort: 8
+      special: null
+      translations: null
+      validation: null
+      validation_message: null
+      width: full
+    schema:
+      name: link
+      table: resources
+      data_type: character varying
+      default_value: null
+      max_length: 255
+      numeric_precision: null
+      numeric_scale: null
+      is_nullable: true
+      is_unique: false
+      is_primary_key: false
+      is_generated: false
+      generation_expression: null
+      has_auto_increment: false
+      foreign_key_table: null
+      foreign_key_column: null
+  - collection: resources
+    field: name
+    type: string
+    meta:
+      collection: resources
+      conditions: null
+      display: null
+      display_options: null
+      field: name
+      group: null
+      hidden: false
+      interface: input
+      note: null
+      options: null
+      readonly: false
+      required: false
+      sort: 7
+      special: null
+      translations: null
+      validation: null
+      validation_message: null
+      width: full
+    schema:
+      name: name
+      table: resources
+      data_type: character varying
+      default_value: null
+      max_length: 255
+      numeric_precision: null
+      numeric_scale: null
+      is_nullable: true
+      is_unique: false
+      is_primary_key: false
+      is_generated: false
+      generation_expression: null
+      has_auto_increment: false
+      foreign_key_table: null
+      foreign_key_column: null
+  - collection: resources
+    field: status
+    type: string
+    meta:
+      collection: resources
+      conditions: null
+      display: labels
+      display_options:
+        choices:
+          - text: $t:published
+            value: published
+            foreground: '#FFFFFF'
+            background: var(--primary)
+          - text: $t:draft
+            value: draft
+            foreground: '#18222F'
+            background: '#D3DAE4'
+          - text: $t:archived
+            value: archived
+            foreground: '#FFFFFF'
+            background: var(--warning)
+        showAsDot: true
+      field: status
+      group: null
+      hidden: false
+      interface: select-dropdown
+      note: null
+      options:
+        choices:
+          - text: $t:published
+            value: published
+          - text: $t:draft
+            value: draft
+          - text: $t:archived
+            value: archived
+      readonly: false
+      required: false
+      sort: 2
+      special: null
+      translations: null
+      validation: null
+      validation_message: null
+      width: full
+    schema:
+      name: status
+      table: resources
+      data_type: character varying
+      default_value: draft
+      max_length: 255
+      numeric_precision: null
+      numeric_scale: null
+      is_nullable: false
+      is_unique: false
+      is_primary_key: false
+      is_generated: false
+      generation_expression: null
+      has_auto_increment: false
+      foreign_key_table: null
+      foreign_key_column: null
+  - collection: resources
+    field: user_created
+    type: uuid
+    meta:
+      collection: resources
+      conditions: null
+      display: user
+      display_options: null
+      field: user_created
+      group: null
+      hidden: true
+      interface: select-dropdown-m2o
+      note: null
+      options:
+        template: '{{avatar.$thumbnail}} {{first_name}} {{last_name}}'
+      readonly: true
+      required: false
+      sort: 3
+      special:
+        - user-created
+      translations: null
+      validation: null
+      validation_message: null
+      width: half
+    schema:
+      name: user_created
+      table: resources
+      data_type: uuid
+      default_value: null
+      max_length: null
+      numeric_precision: null
+      numeric_scale: null
+      is_nullable: true
+      is_unique: false
+      is_primary_key: false
+      is_generated: false
+      generation_expression: null
+      has_auto_increment: false
+      foreign_key_table: directus_users
+      foreign_key_column: id
+  - collection: resources
+    field: user_updated
+    type: uuid
+    meta:
+      collection: resources
+      conditions: null
+      display: user
+      display_options: null
+      field: user_updated
+      group: null
+      hidden: true
+      interface: select-dropdown-m2o
+      note: null
+      options:
+        template: '{{avatar.$thumbnail}} {{first_name}} {{last_name}}'
+      readonly: true
+      required: false
+      sort: 5
+      special:
+        - user-updated
+      translations: null
+      validation: null
+      validation_message: null
+      width: half
+    schema:
+      name: user_updated
+      table: resources
+      data_type: uuid
+      default_value: null
+      max_length: null
+      numeric_precision: null
+      numeric_scale: null
+      is_nullable: true
+      is_unique: false
+      is_primary_key: false
+      is_generated: false
+      generation_expression: null
+      has_auto_increment: false
+      foreign_key_table: directus_users
+      foreign_key_column: id
 relations:
   - collection: checklist
     field: organization
@@ -1516,6 +3477,69 @@ relations:
       constraint_name: checklist_user_updated_foreign
       on_update: NO ACTION
       on_delete: NO ACTION
+  - collection: contact
+    field: organization
+    related_collection: organization
+    meta:
+      junction_field: null
+      many_collection: contact
+      many_field: organization
+      one_allowed_collections: null
+      one_collection: organization
+      one_collection_field: null
+      one_deselect_action: nullify
+      one_field: contact
+      sort_field: null
+    schema:
+      table: contact
+      column: organization
+      foreign_key_table: organization
+      foreign_key_column: id
+      constraint_name: contact_organization_foreign
+      on_update: NO ACTION
+      on_delete: SET NULL
+  - collection: contact
+    field: user_created
+    related_collection: directus_users
+    meta:
+      junction_field: null
+      many_collection: contact
+      many_field: user_created
+      one_allowed_collections: null
+      one_collection: directus_users
+      one_collection_field: null
+      one_deselect_action: nullify
+      one_field: null
+      sort_field: null
+    schema:
+      table: contact
+      column: user_created
+      foreign_key_table: directus_users
+      foreign_key_column: id
+      constraint_name: contact_user_created_foreign
+      on_update: NO ACTION
+      on_delete: NO ACTION
+  - collection: contact
+    field: user_updated
+    related_collection: directus_users
+    meta:
+      junction_field: null
+      many_collection: contact
+      many_field: user_updated
+      one_allowed_collections: null
+      one_collection: directus_users
+      one_collection_field: null
+      one_deselect_action: nullify
+      one_field: null
+      sort_field: null
+    schema:
+      table: contact
+      column: user_updated
+      foreign_key_table: directus_users
+      foreign_key_column: id
+      constraint_name: contact_user_updated_foreign
+      on_update: NO ACTION
+      on_delete: NO ACTION
   - collection: directus_users
     field: organization
     related_collection: organization
@@ -1537,6 +3561,111 @@ relations:
       constraint_name: directus_users_organization_foreign
       on_update: NO ACTION
       on_delete: SET NULL
+  - collection: faq
+    field: orgId
+    related_collection: organization
+    meta:
+      junction_field: null
+      many_collection: faq
+      many_field: orgId
+      one_allowed_collections: null
+      one_collection: organization
+      one_collection_field: null
+      one_deselect_action: nullify
+      one_field: faq
+      sort_field: null
+    schema:
+      table: faq
+      column: orgId
+      foreign_key_table: organization
+      foreign_key_column: id
+      constraint_name: faq_orgid_foreign
+      on_update: NO ACTION
+      on_delete: SET NULL
+  - collection: faq
+    field: user_created
+    related_collection: directus_users
+    meta:
+      junction_field: null
+      many_collection: faq
+      many_field: user_created
+      one_allowed_collections: null
+      one_collection: directus_users
+      one_collection_field: null
+      one_deselect_action: nullify
+      one_field: null
+      sort_field: null
+    schema:
+      table: faq
+      column: user_created
+      foreign_key_table: directus_users
+      foreign_key_column: id
+      constraint_name: faq_user_created_foreign
+      on_update: NO ACTION
+      on_delete: NO ACTION
+  - collection: faq
+    field: user_updated
+    related_collection: directus_users
+    meta:
+      junction_field: null
+      many_collection: faq
+      many_field: user_updated
+      one_allowed_collections: null
+      one_collection: directus_users
+      one_collection_field: null
+      one_deselect_action: nullify
+      one_field: null
+      sort_field: null
+    schema:
+      table: faq
+      column: user_updated
+      foreign_key_table: directus_users
+      foreign_key_column: id
+      constraint_name: faq_user_updated_foreign
+      on_update: NO ACTION
+      on_delete: NO ACTION
+  - collection: homepage_cards
+    field: user_created
+    related_collection: directus_users
+    meta:
+      junction_field: null
+      many_collection: homepage_cards
+      many_field: user_created
+      one_allowed_collections: null
+      one_collection: directus_users
+      one_collection_field: null
+      one_deselect_action: nullify
+      one_field: null
+      sort_field: null
+    schema:
+      table: homepage_cards
+      column: user_created
+      foreign_key_table: directus_users
+      foreign_key_column: id
+      constraint_name: homepage_cards_user_created_foreign
+      on_update: NO ACTION
+      on_delete: NO ACTION
+  - collection: homepage_cards
+    field: user_updated
+    related_collection: directus_users
+    meta:
+      junction_field: null
+      many_collection: homepage_cards
+      many_field: user_updated
+      one_allowed_collections: null
+      one_collection: directus_users
+      one_collection_field: null
+      one_deselect_action: nullify
+      one_field: null
+      sort_field: null
+    schema:
+      table: homepage_cards
+      column: user_updated
+      foreign_key_table: directus_users
+      foreign_key_column: id
+      constraint_name: homepage_cards_user_updated_foreign
+      on_update: NO ACTION
+      on_delete: NO ACTION
   - collection: landingPage
     field: organization
     related_collection: organization
@@ -1621,6 +3750,30 @@ relations:
       constraint_name: landingpage_user_updated_foreign
       on_update: NO ACTION
       on_delete: NO ACTION
+  - collection: navbar
+    field: user_created
+    related_collection: directus_users
+    meta: null
+    schema:
+      table: navbar
+      column: user_created
+      foreign_key_table: directus_users
+      foreign_key_column: id
+      constraint_name: navbar_user_created_foreign
+      on_update: NO ACTION
+      on_delete: NO ACTION
+  - collection: navbar
+    field: user_updated
+    related_collection: directus_users
+    meta: null
+    schema:
+      table: navbar
+      column: user_updated
+      foreign_key_table: directus_users
+      foreign_key_column: id
+      constraint_name: navbar_user_updated_foreign
+      on_update: NO ACTION
+      on_delete: NO ACTION
   - collection: organization
     field: user_created
     related_collection: directus_users
@@ -1661,5 +3814,68 @@ relations:
       foreign_key_table: directus_users
       foreign_key_column: id
       constraint_name: organization_user_updated_foreign
+      on_update: NO ACTION
+      on_delete: NO ACTION
+  - collection: resources
+    field: image
+    related_collection: directus_files
+    meta:
+      junction_field: null
+      many_collection: resources
+      many_field: image
+      one_allowed_collections: null
+      one_collection: directus_files
+      one_collection_field: null
+      one_deselect_action: nullify
+      one_field: null
+      sort_field: null
+    schema:
+      table: resources
+      column: image
+      foreign_key_table: directus_files
+      foreign_key_column: id
+      constraint_name: resources_image_foreign
+      on_update: NO ACTION
+      on_delete: SET NULL
+  - collection: resources
+    field: user_created
+    related_collection: directus_users
+    meta:
+      junction_field: null
+      many_collection: resources
+      many_field: user_created
+      one_allowed_collections: null
+      one_collection: directus_users
+      one_collection_field: null
+      one_deselect_action: nullify
+      one_field: null
+      sort_field: null
+    schema:
+      table: resources
+      column: user_created
+      foreign_key_table: directus_users
+      foreign_key_column: id
+      constraint_name: resources_user_created_foreign
+      on_update: NO ACTION
+      on_delete: NO ACTION
+  - collection: resources
+    field: user_updated
+    related_collection: directus_users
+    meta:
+      junction_field: null
+      many_collection: resources
+      many_field: user_updated
+      one_allowed_collections: null
+      one_collection: directus_users
+      one_collection_field: null
+      one_deselect_action: nullify
+      one_field: null
+      sort_field: null
+    schema:
+      table: resources
+      column: user_updated
+      foreign_key_table: directus_users
+      foreign_key_column: id
+      constraint_name: resources_user_updated_foreign
       on_update: NO ACTION
       on_delete: NO ACTION

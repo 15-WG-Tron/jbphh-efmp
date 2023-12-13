@@ -1,25 +1,24 @@
 'use client';
-import { useRouter } from 'next/router';
-import HelpIcon from '@mui/icons-material/Help';
-import GroupsIcon from '@mui/icons-material/Groups';
+
 import { HomePageCard } from '../components/HomePageCard';
-import { AppError } from '@/middleware/ErrorHandling';
+import { useHomePageCard } from './hooks/homepagecard';
 
 export default function Home() {
+  const { data: homePageCardContent } = useHomePageCard();
+
   return (
-    <div className="w-11/12 mx-auto">
-      <div className="hero min-h-1/2 bg-base-200 w-11/12">
+    <div className="w-5/6 mx-auto">
         <div className="hero-content text-center">
           <div className="max-w-3/4 p-12">
-            <h1 className="text-5xl font-bold">Welcome to Cyber 'Ohana</h1>
-            <div className={'flex flex-col items-center p-10 leading-10 text-center'}>
+            <h1 className="text-5xl font-bold">Hickam Connect</h1>
+            <div className=" hidden md:flex md:flex-col items-center p-10 leading-10 text-center">
               <p>
-                Cyber 'Ohana, created by the Tron team, is a comprehensive platform that brings together a wealth of
+                Hickam Connect, created by the Tron team, is a comprehensive platform that brings together a wealth of
                 information and valuable resources for the Joint Base Pearl Harbor-Hickam community.
               </p>
               <p>
-                Cyber 'Ohana serves as a central hub where you can access a vast collection of information and discover
-                valuable resources.
+                Hickam Connect serves as a central hub where you can access a vast collection of information and
+                discover valuable resources.
               </p>
               <p>
                 Our commitment extends beyond simply providing information and resources. We are here to guide you and
@@ -31,17 +30,14 @@ export default function Home() {
         </div>
       </div>
 
-      <section className={'items-start mt-10 w-5/6'}>
-        <p className={'text-2xl text-bold'}> Need help?</p>
-        <p className={'text-gray-300'}>Perphaps you can find the answers in our collections</p>
+      <section className="mt-10 w-full">
+        <p className="text-2xl text-bold mb-3 text-center md:text-left"> Need help?</p>
+        <p className="text-gray-300 hidden md:block">Perphaps you can find the answers in our collections</p>
       </section>
-      <div className="flex flex-col w-5/6">
-        <div className="lg:divider"></div>
-        <div className={'grid lg:grid-cols-4 md:grid-cols-auto gap-3 lg:min-h-[10rem] '}>
-          <HomePageCard title={'F.A.Q'} text={'asdasdasdasd'} icon={<GroupsIcon />} />
-          <HomePageCard title={'Community'} text={'asdasdasdasd'} icon={<HelpIcon />} />
-          <HomePageCard title={'F.A.Q'} text={'asdasdasdasd'} icon={<GroupsIcon />} />
-          <HomePageCard title={'F.A.Q'} text={'asdasdasdasd'} icon={<GroupsIcon />} />
+      <div className="md:divider"></div>
+      <div className="w-full flex justify-center flex-col">
+        <div className="grid md:grid-cols-3 grid-cols-auto gap-3">
+          <HomePageCard cardContent={homePageCardContent} />
         </div>
       </div>
     </div>
